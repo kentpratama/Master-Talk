@@ -1,31 +1,14 @@
 # Master Talk
 
-Master Talk adalah tempat latihan public speaking yang simpel. Kamu dikasih satu topik acak, pelajari sendiri, lalu jelaskan keras-keras sampai timer habis.
+Master Talk adalah tempat latihan public speaking yang simpel. Terdapat ribuan topik yang bisa anda temui, pelajari materinya, lalu jelaskan materinya dengan durasi yang ditentukan. Di sini kamu bisa mendapat judul topik dengan katerogi yang bisa anda tentukan, lalu anda dapat menentukan timer untuk menentukan waktu anda belajar dari materi yand anda dapat, setelah itu anda bisa tampil depan layar untuk mempresentasikan hasil materi kamu.
 
-Di sini kamu cuma dapat judul topik. Nggak ada materi siap pakai, nggak ada kuis, dan nggak ada rekaman suara. Cari bahan dan susun penjelasan sendiri, karena di situlah latihannya.
+**Coba Langsung:** https://kentpratama.github.io/
 
-**Coba langsung:** https://kentpratama.github.io/
+## Panduan Untuk Menggunakan Master Talk
 
-## Cara main
-
-1. **Dapatkan topik.** Pilih jenis topik yang kamu suka, lalu tekan Putar.
-2. **Pelajari materinya.** Pakai waktu belajar 5, 10, atau 15 menit (boleh dilewati) buat cari bahan dan catat poin penting.
-3. **Jelaskan.** Pilih durasi 2 sampai 10 menit, lalu bicara sampai timer habis. Mau selesai lebih awal? Tekan Spasi atau tombol Selesai.
-
-## Isi aplikasi
-
-- Lebih dari 1.800 topik di 10 jenis: Sejarah, Tokoh, Biologi, Astronomi, Geografi, Sains, Teknologi, Misteri, Fakta Dunia, dan Ekonomi.
-- Topik yang sudah keluar nggak diulang sampai semua topik di jenis pilihanmu kebagian.
-- Topik Hari Ini yang berganti tiap hari.
-- Catatan per topik, riwayat, favorit, dan statistik.
-- Api streak harian. Warnanya berubah di hari ke-7, 14, 30, dan 50.
-- Empat gaya suara, mode terang atau gelap, dan enam warna tema.
-- Kode cadangan untuk menyimpan dan memulihkan data.
-- Tanpa akun dan tanpa mikrofon. Semua data tersimpan di browser kamu.
-
-## Dibuat dengan
-
-Satu file `index.html` berisi HTML, CSS, dan JavaScript biasa, tanpa framework dan tanpa proses build. Font dari Google Fonts, data disimpan di `localStorage`.
+1. **Dapatkan Topik.** Pilih jenis topik yang kamu suka, lalu tekan dapatkan topiknya.
+2. **Pelajari Materinya.** Terdapat waktu belajar 5, 10, atau 15 menit untuk mencari bahan materi dan catat poin penting.
+3. **Jelaskan.** Pilih durasi 2 sampai 10 menit, lalu bicara sampai timer habis.
 
 ## Pembuat
 
