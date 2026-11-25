@@ -1,0 +1,1681 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Master Talk</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Master Talk melatih public speaking lewat topik acak yang kamu pelajari sendiri, lalu jelaskan sampai waktu habis. Dibuat oleh Christopher Kent Pratama.">
+<meta name="author" content="Christopher Kent Pratama">
+<meta property="og:title" content="Master Talk">
+<meta property="og:description" content="Latih public speaking dengan topik acak yang kamu pelajari sendiri.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
+<style>
+/* Master Talk: gaya poster panggung. Kertas krem, tepi tebal, bayangan keras, huruf besar. Tema warna mengikuti pilihan pengguna. */
+:root{
+  --bg:#F1EDE2; --surface:#FFFCF4; --ink:#16140F; --muted:#5A5548; --line:#D9D2C0; --bd:#16140F;
+  --accent:#C93A26; --accent-ink:#FFFFFF; --warn:#9A4A00;
+  --stage:#FFFFFF; --stage-ink:#16140F; --stage-muted:#5A5548; --stage-line:#E4DFD2; --stage-accent:#C93A26;
+  --glow:rgba(201,58,38,.13);
+  --f-display:'Bricolage Grotesque','Arial Black',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --r:6px;
+  --f-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F0E0B; --surface:#1A1813; --ink:#F2EDE0; --muted:#A39C8A; --line:#2E2A21; --bd:#E6E0D0;
+    --accent:#FF6B52; --accent-ink:#1A0804; --warn:#FFB84D;
+    --stage:#1C1A16; --stage-ink:#F6F1E4; --stage-muted:#8F887A; --stage-line:#26231C;
+    --glow:rgba(255,107,82,.14);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F0E0B; --surface:#1A1813; --ink:#F2EDE0; --muted:#A39C8A; --line:#2E2A21; --bd:#E6E0D0;
+  --accent:#FF6B52; --accent-ink:#1A0804; --warn:#FFB84D;
+  --stage:#1C1A16; --stage-ink:#F6F1E4; --stage-muted:#8F887A; --stage-line:#26231C;
+  --glow:rgba(255,107,82,.14);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+html,body{min-height:100%}
+body{margin:0; font:16px/1.6 var(--f-body); color:var(--ink); background-color:var(--bg); -webkit-text-size-adjust:100%}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:70; background:var(--bg)}
+h1,h2,h3,h4{font-family:var(--f-display); line-height:1.02; text-wrap:balance; margin:0}
+h1{font-size:clamp(2.05rem,5.6vw,4rem); font-weight:800; letter-spacing:-.035em}
+h2{font-size:clamp(1.9rem,5vw,3rem); font-weight:800; letter-spacing:-.03em}
+h3{font-size:1.2rem; font-weight:800; letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+.in{max-width:1120px; margin:0 auto; padding-left:max(16px,env(safe-area-inset-left,0px)); padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:700 .74rem var(--f-mono); letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.muted{color:var(--muted)}
+.small{font-size:.88rem}
+.stack{display:flex; flex-direction:column; gap:20px}
+.row{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+.spread{justify-content:space-between}
+.block{display:flex; flex-direction:column; gap:10px}
+
+.btn{
+  font:700 1rem/1.2 var(--f-body); min-height:48px; padding:12px 20px; border-radius:var(--r); text-decoration:none;
+  border:2px solid var(--bd); background:var(--surface); color:var(--ink); cursor:pointer;
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  box-shadow:3px 3px 0 var(--bd); transition:transform .08s ease, box-shadow .08s ease;
+}
+.btn:hover:not(:disabled){transform:translate(-1px,-1px); box-shadow:4px 4px 0 var(--bd)}
+.btn:active:not(:disabled){transform:translate(2px,2px); box-shadow:1px 1px 0 var(--bd)}
+.btn:disabled{opacity:.45; cursor:not-allowed; box-shadow:none}
+.btn-primary{background:var(--accent); color:var(--accent-ink)}
+.btn-big{min-height:60px; font-size:1.12rem; padding-inline:28px}
+.btn-sm{min-height:40px; padding:8px 16px; font-size:.95rem}
+.btn-quiet,.btn-icon{border-color:transparent; background:transparent; box-shadow:none; color:var(--muted); min-height:44px; padding:8px 12px}
+.btn-icon{min-width:44px; padding:8px; color:var(--ink)}
+.btn-quiet:hover:not(:disabled),.btn-icon:hover:not(:disabled){transform:none; box-shadow:none; color:var(--ink); background:var(--line)}
+.btn-quiet:active:not(:disabled),.btn-icon:active:not(:disabled){transform:none; box-shadow:none}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+kbd{font:600 .85em var(--f-mono); border:2px solid var(--bd); border-radius:5px; padding:0 7px; background:var(--surface); box-shadow:2px 2px 0 var(--bd)}
+
+/* ---------- situs ---------- */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:var(--bg); border-bottom:2px solid var(--bd)}
+.navin{display:flex; align-items:center; gap:16px; min-height:64px}
+.brand{white-space:nowrap; display:flex; align-items:center; gap:10px; font:800 1.3rem var(--f-display); text-decoration:none; letter-spacing:-.03em}
+.mark{width:34px; height:34px; border-radius:7px; border:2px solid var(--bd); box-shadow:2px 2px 0 var(--bd); background:var(--accent); color:var(--accent-ink); display:grid; place-items:center}
+.links{display:flex; gap:2px; margin-left:12px}
+.links a{padding:8px 11px; color:var(--ink); font-weight:600; font-size:.95rem; text-decoration:none; border-bottom:2px solid transparent}
+.links a:hover{border-bottom-color:var(--accent)}
+.navr{margin-left:auto; display:flex; gap:8px; align-items:center}
+section[id]{scroll-margin-top:80px}
+
+.band{padding-block:80px}
+.band.alt{background:var(--surface); border-block:2px solid var(--bd)}
+.sh{display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 18px; border-bottom:2px solid var(--bd); padding-bottom:14px; margin-bottom:32px}
+.sn{font:700 1rem var(--f-mono); color:var(--accent); letter-spacing:.04em}
+.sh .sub{margin-left:auto; max-width:38ch; text-align:right; font-size:.95rem}
+
+.hero{position:relative; padding-block:56px 72px; background-image:radial-gradient(var(--line) 1.2px, transparent 1.4px); background-size:20px 20px}
+.herogrid{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); gap:56px; align-items:center}
+.herotxt{display:flex; flex-direction:column; gap:24px}
+.kicker span{display:inline-block; font:700 .8rem var(--f-mono); letter-spacing:.1em; text-transform:uppercase; border:2px solid var(--bd); border-radius:99px; padding:5px 14px; background:var(--surface)}
+h1 mark{background:var(--accent); color:var(--accent-ink); padding:0 .14em; border-radius:6px; display:inline-block; transform:rotate(-1.4deg); box-decoration-break:clone}
+.lede{max-width:46ch; font-size:1.15rem; color:var(--muted)}
+.badges{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px 18px; font:600 .82rem var(--f-mono); color:var(--muted)}
+.badges li::before{content:"\2713\00a0"; color:var(--accent); font-weight:700}
+.cta2{display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:540px}
+.cta2 .btn{width:100%; padding-inline:16px; white-space:nowrap}
+.herodemo{padding:10px 10px 18px 0}
+
+.daily{border-block:2px solid var(--bd); background:var(--surface)}
+.dailyin{display:flex; align-items:center; gap:18px 26px; padding-block:18px; flex-wrap:wrap}
+.dtag{font:700 .78rem var(--f-mono); letter-spacing:.1em; text-transform:uppercase; background:var(--ink); color:var(--bg); padding:5px 12px; border-radius:4px}
+.dmain{display:flex; align-items:baseline; gap:6px 14px; flex-wrap:wrap; flex:1; min-width:0}
+.dmain strong{font:800 clamp(1.3rem,3.4vw,1.9rem) var(--f-display); letter-spacing:-.02em; overflow-wrap:anywhere}
+.dgroup{font:600 .9rem var(--f-mono); color:var(--muted)}
+
+.ticker{overflow:hidden; background:var(--accent); color:var(--accent-ink); border-bottom:2px solid var(--bd)}
+.ticker.dark{background:var(--ink); color:var(--bg)}
+.track{display:flex; width:max-content; animation:slide 100s linear infinite}
+.track.rev{animation-direction:reverse; animation-duration:120s}
+.ticker:hover .track{animation-play-state:paused}
+.pill{white-space:nowrap; padding:12px 8px 12px 22px; font:800 1.05rem var(--f-display); text-transform:uppercase; letter-spacing:.01em}
+.pill::after{content:"\2726"; margin-left:22px; opacity:.65}
+@keyframes slide{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+
+.steps{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); list-style:none; margin:0; padding:0; border:2px solid var(--bd); border-radius:10px; background:var(--surface); box-shadow:8px 8px 0 var(--bd); overflow:hidden}
+.step{padding:28px 26px 30px; display:flex; flex-direction:column; gap:12px; border-right:2px solid var(--bd)}
+.step:last-child{border-right:0}
+.num{font:800 5rem/.85 var(--f-display); color:var(--accent); letter-spacing:-.05em}
+.step p{color:var(--muted); max-width:36ch}
+
+.gsec-head{display:flex; align-items:center; gap:14px; margin:34px 0 14px; color:var(--ink); font:800 .95rem var(--f-display); letter-spacing:.04em; text-transform:uppercase}
+.gsec-head:first-child{margin-top:0}
+.gsec-head::after{content:""; flex:1; height:2px; background:var(--bd)}
+.gcards{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px}
+.gcard{border:2px solid var(--bd); background:var(--bg); border-radius:10px; padding:16px; display:flex; flex-direction:column; gap:10px; min-width:0; transition:transform .1s ease, box-shadow .1s ease}
+.gcard:hover{transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--accent)}
+.gcard .top{display:flex; align-items:center; gap:10px}
+.gcard .ico{font-size:1.5rem; line-height:1}
+.gcard h4{font-size:1.15rem; font-weight:800; flex:1; min-width:0; overflow-wrap:anywhere}
+.gcard .cnt{font:600 .78rem var(--f-mono); color:var(--accent-ink); background:var(--accent); padding:2px 8px; border-radius:99px}
+.gcard ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:3px; color:var(--muted); font-size:.92rem}
+.gcard li{display:flex; align-items:baseline; gap:10px}
+.gcard li::before{content:""; flex:none; width:6px; height:6px; border-radius:50%; background:var(--accent); transform:translateY(-1px)}
+
+.kr{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:44px; align-items:start}
+.kleft{display:flex; flex-direction:column; gap:22px}
+.kbar{display:flex; height:58px; border:2px solid var(--bd); border-radius:8px; overflow:hidden; box-shadow:5px 5px 0 var(--bd)}
+.kbar .k1{flex:10; background:var(--accent)}
+.kbar .k2{flex:80; background:var(--bg)}
+.kbar .k3{flex:10; background:var(--ink)}
+.klist{list-style:none; margin:0; padding:0; display:flex; flex-direction:column}
+.klist li{display:grid; grid-template-columns:18px 4.2rem 1fr auto; gap:12px; align-items:center; padding:12px 0; border-bottom:2px solid var(--line)}
+.klist li:last-child{border-bottom:0}
+.klist .dot{width:16px; height:16px; border:2px solid var(--bd); border-radius:4px}
+.klist .d1{background:var(--accent)} .klist .d2{background:var(--bg)} .klist .d3{background:var(--ink)}
+.klist em{font:600 1.05rem var(--f-mono); font-style:normal}
+.klist span{color:var(--muted)}
+.tips{list-style:none; margin:0; padding:0; counter-reset:tip; display:flex; flex-direction:column}
+.tips li{counter-increment:tip; display:grid; grid-template-columns:2.4rem 1fr; gap:12px; padding:14px 0; border-top:2px solid var(--bd)}
+.tips li:last-child{border-bottom:2px solid var(--bd)}
+.tips li::before{content:counter(tip, decimal-leading-zero); font:700 .95rem var(--f-mono); color:var(--accent); padding-top:2px}
+
+.feats{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 48px}
+.feat{display:grid; grid-template-columns:2.6rem 1fr; gap:4px 12px; padding:20px 0 24px; border-top:2px solid var(--bd)}
+.fico{font:700 .95rem var(--f-mono); color:var(--accent); padding-top:3px}
+.feat p{color:var(--muted); grid-column:2; max-width:46ch}
+
+.faq{display:flex; flex-direction:column; gap:14px; max-width:820px}
+details{border:2px solid var(--bd); background:var(--bg); border-radius:10px; padding:2px 20px}
+details[open]{box-shadow:5px 5px 0 var(--bd)}
+summary{cursor:pointer; font:800 1.05rem var(--f-display); padding:16px 0; list-style:none; display:flex; justify-content:space-between; gap:14px; align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+"; font:700 1.5rem var(--f-mono); color:var(--accent)}
+details[open] summary::after{content:"\2212"}
+details p{color:var(--muted); padding-bottom:18px; max-width:62ch}
+
+.cta{background:var(--accent); color:var(--accent-ink); border:2px solid var(--bd); border-radius:12px; box-shadow:10px 10px 0 var(--bd); padding:56px 36px; display:flex; flex-direction:column; align-items:flex-start; gap:26px}
+.cta h2{max-width:16ch; font-size:clamp(2.1rem,6vw,3.8rem)}
+.cta .btn{background:var(--ink); color:var(--bg)}
+.foot{border-top:2px solid var(--bd); padding-block:44px 40px; overflow:hidden}
+.wordmark{font:800 clamp(3rem,15vw,10.5rem)/.85 var(--f-display); letter-spacing:-.05em; text-transform:uppercase; color:var(--ink); white-space:nowrap}
+.footrow{display:flex; justify-content:space-between; gap:8px 24px; flex-wrap:wrap; margin-top:26px; font-weight:600}
+.foot .small{margin-top:8px; color:var(--muted)}
+
+/* ---------- jendela undian ---------- */
+.reel{
+  background:var(--stage); color:var(--stage-ink); border:2px solid var(--bd); border-radius:12px;
+  padding:18px 16px 26px; text-align:center; position:relative; overflow:hidden; box-shadow:8px 8px 0 var(--accent);
+}
+.herodemo .reel{transform:rotate(1.8deg)}
+.reel::before,.reel::after{content:""; position:absolute; left:0; right:0; height:32%; pointer-events:none; z-index:2}
+.reel::before{top:0; background:linear-gradient(var(--stage) 36%, transparent)}
+.reel::after{bottom:0; background:linear-gradient(transparent, var(--stage) 70%)}
+.reel .eyebrow{display:inline-block; color:var(--accent-ink); background:var(--accent); padding:4px 12px; border-radius:4px; position:relative; z-index:3}
+.rows{display:flex; flex-direction:column; gap:10px; padding-top:12px; min-height:12rem; justify-content:center}
+.rw{overflow-wrap:anywhere}
+.rw.side{font:600 1.05rem var(--f-body); color:var(--stage-muted); opacity:.6; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-height:1.4em}
+.rw.cur{font:800 clamp(1.9rem,6.5vw,3.1rem)/1.05 var(--f-display); letter-spacing:-.03em; text-wrap:balance; min-height:1.1em}
+.rw.cur.flip{animation:flip .09s ease-out}
+.rw.cur.land{animation:land .45s cubic-bezier(.2,1.4,.4,1); color:var(--stage-accent)}
+@keyframes flip{from{transform:translateY(-30%); opacity:.25} to{transform:none; opacity:1}}
+@keyframes land{from{transform:scale(.82); opacity:.3} to{transform:none; opacity:1}}
+.cf{position:absolute; width:8px; height:12px; border-radius:2px; z-index:4; pointer-events:none}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+
+/* ---------- ruang latihan ---------- */
+.appbar{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:var(--bg); border-bottom:2px solid var(--bd)}
+.appin{display:flex; align-items:center; gap:12px; min-height:62px}
+.tabs{display:flex; gap:6px; margin-inline:auto; flex-wrap:wrap}
+.tab{font:700 .95rem var(--f-body); min-height:40px; padding:8px 16px; border-radius:var(--r); border:2px solid transparent; background:transparent; color:var(--muted); cursor:pointer}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--ink); border-color:var(--bd); color:var(--bg)}
+.appmain{padding-block:30px 60px}
+.setupgrid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,430px); gap:36px; align-items:start}
+.col-reel{position:sticky; top:86px; display:flex; flex-direction:column; gap:16px}
+.actions{display:flex; gap:12px; flex-wrap:wrap}
+.chips{display:flex; gap:10px; flex-wrap:wrap}
+.chip{
+  flex:1 1 56px; min-height:58px; border:2px solid var(--bd); background:var(--surface); color:var(--ink);
+  border-radius:var(--r); font:800 1.2rem var(--f-display); cursor:pointer; line-height:1.1; box-shadow:3px 3px 0 var(--bd);
+  transition:transform .08s ease, box-shadow .08s ease;
+}
+.chip:hover:not(:disabled){transform:translate(-1px,-1px); box-shadow:4px 4px 0 var(--bd)}
+.chip small{display:block; font:600 .68rem var(--f-mono); color:var(--muted); letter-spacing:.04em}
+.chip[aria-pressed="true"]{background:var(--accent); color:var(--accent-ink); transform:translate(2px,2px); box-shadow:1px 1px 0 var(--bd)}
+.chip[aria-pressed="true"] small{color:inherit; opacity:.85}
+.chip:disabled{opacity:.5; cursor:not-allowed}
+.gsec{display:flex; flex-direction:column; gap:10px}
+.gshead{margin-top:8px; flex-wrap:nowrap; gap:8px}
+.gshead .eyebrow{min-width:0; color:var(--ink)}
+.gshead .btn-quiet{min-height:36px; padding:6px 8px; font-size:.9rem}
+.groups{display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px}
+.tg{display:block; position:relative; min-width:0}
+.tg input{position:absolute; opacity:0; inset:0; width:100%; height:100%; margin:0; cursor:pointer}
+.tgbox{
+  display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:50px; padding:10px 12px;
+  border:2px solid var(--line); background:var(--surface); border-radius:var(--r); font-weight:600; pointer-events:none;
+}
+.tgbox b{font-weight:700; overflow-wrap:anywhere}
+.tgbox small{font:600 .76rem var(--f-mono); color:var(--muted)}
+.tg input:checked + .tgbox{background:var(--accent); border-color:var(--bd); color:var(--accent-ink); box-shadow:3px 3px 0 var(--bd)}
+.tg input:checked + .tgbox small{color:inherit; opacity:.85}
+@supports (background: color-mix(in srgb, red, blue)){
+  .tg input:checked + .tgbox{background:color-mix(in srgb, var(--accent) 24%, var(--surface)); border-color:var(--bd); color:var(--ink); box-shadow:3px 3px 0 var(--accent)}
+  .tg input:checked + .tgbox small{color:var(--muted); opacity:1}
+  .tg input:checked + .tgbox b::before{content:"\2713\00a0"; color:var(--accent); font-weight:800}
+}
+.tg input:focus-visible + .tgbox{outline:3px solid var(--accent); outline-offset:2px}
+.tg input:disabled{cursor:not-allowed}
+.tg input:disabled + .tgbox{opacity:.55}
+.status{font-size:.9rem; color:var(--muted); min-height:1.4em}
+textarea{
+  width:100%; min-height:110px; resize:vertical; font:16px/1.5 var(--f-body); color:var(--ink);
+  background:var(--surface); border:2px solid var(--bd); border-radius:var(--r); padding:12px 14px;
+}
+
+.stage{text-align:center; padding:26px 0 6px; display:flex; flex-direction:column; align-items:center; gap:14px}
+.phase{font:800 clamp(1.6rem,5vw,2.4rem) var(--f-display); letter-spacing:-.02em}
+.hint{max-width:44ch; color:var(--muted)}
+.timer{font:500 clamp(4.2rem,20vw,8.5rem)/1 var(--f-mono); font-variant-numeric:tabular-nums; letter-spacing:-.03em}
+.timer.warn{color:var(--warn)}
+.bar{width:100%; max-width:640px; height:14px; border-radius:4px; border:2px solid var(--bd); background:var(--surface); overflow:hidden}
+.bar i{display:block; height:100%; width:0; background:var(--accent)}
+.bar.warn i{background:var(--warn)}
+.topicbar{font:800 clamp(1.4rem,4.5vw,2rem)/1.1 var(--f-display); letter-spacing:-.02em; overflow-wrap:anywhere}
+.sess{max-width:720px; margin:0 auto}
+
+.facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px}
+.fact{border:2px solid var(--bd); background:var(--surface); border-radius:10px; padding:14px 16px; display:flex; flex-direction:column; gap:4px; min-width:0}
+.fact .v{font:800 1.8rem/1.1 var(--f-display); letter-spacing:-.02em; font-variant-numeric:tabular-nums; overflow-wrap:anywhere}
+
+.list{display:flex; flex-direction:column; gap:12px}
+.item{display:grid; grid-template-columns:auto minmax(0,1fr) auto; grid-template-areas:"star tt btn"; gap:4px 12px; align-items:center; border:2px solid var(--bd); background:var(--surface); border-radius:10px; padding:12px 14px}
+.item .star{grid-area:star}
+.item .tt{grid-area:tt; min-width:0}
+.item .hbtn{grid-area:btn}
+.item .tt b{display:block; font-weight:800; overflow-wrap:anywhere}
+.item .tt span{font-size:.85rem; color:var(--muted)}
+.star{font-size:1.3rem; line-height:1; min-width:44px; min-height:44px; border:0; background:transparent; color:var(--line); cursor:pointer; border-radius:10px}
+.star[aria-pressed="true"]{color:var(--accent)}
+.empty{border:2px dashed var(--bd); border-radius:12px; padding:34px 20px; text-align:center; display:flex; flex-direction:column; gap:14px; align-items:center; color:var(--muted)}
+.barrow{display:grid; grid-template-columns:minmax(90px,150px) 1fr auto; gap:10px; align-items:center; font-weight:600}
+.bar2{height:14px; border-radius:4px; border:2px solid var(--bd); background:var(--surface); overflow:hidden}
+.bar2 i{display:block; height:100%; background:var(--accent)}
+.barrow .n{font:600 .85rem var(--f-mono); color:var(--muted)}
+
+/* ---------- pengaturan ---------- */
+.modal{position:fixed; inset:0; z-index:100; background:rgba(8,7,5,.62); display:flex; align-items:center; justify-content:center; padding:16px}
+.panel{background:var(--bg); color:var(--ink); border:2px solid var(--bd); border-radius:12px; box-shadow:8px 8px 0 var(--accent); width:100%; max-width:520px; max-height:calc(100% - 24px); overflow-y:auto; padding:22px; display:flex; flex-direction:column; gap:20px}
+.seg{display:flex; gap:8px; flex-wrap:wrap}
+.opt{flex:1 1 90px; min-height:44px; border:2px solid var(--bd); background:var(--surface); color:var(--ink); border-radius:var(--r); font:700 .95rem var(--f-body); cursor:pointer; padding:8px 10px; box-shadow:2px 2px 0 var(--bd)}
+.opt[aria-pressed="true"]{background:var(--accent); color:var(--accent-ink); box-shadow:none; transform:translate(2px,2px)}
+.swatches{display:flex; gap:12px; flex-wrap:wrap}
+.sw{width:44px; height:44px; border-radius:var(--r); border:2px solid var(--bd); box-shadow:2px 2px 0 var(--bd); cursor:pointer; padding:0}
+.sw[aria-pressed="true"]{box-shadow:none; transform:translate(2px,2px); outline:3px solid var(--ink); outline-offset:2px}
+.seg.hf{flex-wrap:nowrap}
+.seg.hf .opt{flex:0 0 auto; padding-inline:16px}
+.stylerow{display:flex; gap:8px}
+.stylerow .opt{flex:1}
+input[type=range]{width:100%; accent-color:var(--accent); min-height:32px}
+.check{display:flex; gap:10px; align-items:center; min-height:44px; cursor:pointer}
+.check input{width:22px; height:22px; accent-color:var(--accent)}
+
+.warnbar{background:var(--warn); color:var(--bg); padding:10px 16px; text-align:center; font-weight:700; font-size:.9rem}
+.flame{display:inline-flex; align-items:center; gap:5px; min-height:44px; padding:6px 10px; border-radius:var(--r); border:2px solid var(--bd); box-shadow:2px 2px 0 var(--bd); background:var(--surface); color:var(--ink); cursor:pointer; font:800 1rem var(--f-display); --fc:var(--muted)}
+.flame .fl{color:var(--fc)}
+.flame.cold .fl{opacity:.55}
+.flame.push{margin-left:auto}
+.flame:hover{transform:translate(-1px,-1px); box-shadow:3px 3px 0 var(--bd)}
+.flame[data-tier="1"]{--fc:#F5B301} .flame[data-tier="2"]{--fc:#F97316} .flame[data-tier="3"]{--fc:#EF4444} .flame[data-tier="4"]{--fc:#8B5CF6} .flame[data-tier="5"]{--fc:#D946EF}
+.flame[data-tier="5"] .fl,.sflame .fl.glow{filter:drop-shadow(0 0 5px #D946EF); animation:glow 2.2s ease-in-out infinite}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 3px #D946EF)} 50%{filter:drop-shadow(0 0 9px #E879F9)}}
+.sflame{display:flex; flex-direction:column; align-items:center; gap:4px; text-align:center}
+.sbig{font:800 3.2rem/1 var(--f-display); letter-spacing:-.03em}
+.sbar{width:100%; height:14px; border-radius:4px; border:2px solid var(--bd); background:var(--surface); overflow:hidden}
+.sbar i{display:block; height:100%}
+.week{display:grid; grid-template-columns:repeat(7,1fr); gap:6px; text-align:center; font:600 .76rem var(--f-mono); color:var(--muted)}
+.dotd{width:30px; height:30px; margin:4px auto 0; border-radius:6px; border:2px solid var(--bd); display:grid; place-items:center; font-size:.8rem}
+.dotd.on{color:#fff}
+.dotd.today{box-shadow:0 0 0 2px var(--bg), 0 0 0 4px var(--ink)}
+.ladder{display:flex; justify-content:space-between; gap:6px; text-align:center; font:600 .74rem var(--f-mono); color:var(--muted)}
+.ladder div{display:flex; flex-direction:column; align-items:center; gap:2px; min-width:0}
+.stylerow .opt.play{flex:0 0 52px; display:grid; place-items:center; padding:0}
+#backup-box{min-height:84px; font:500 .8rem/1.4 var(--f-mono); word-break:break-all}
+
+@media (max-width:900px){
+  .herogrid{grid-template-columns:minmax(0,1fr); gap:40px}
+  .herodemo{padding:0 8px 14px 0}
+  .kr{grid-template-columns:minmax(0,1fr); gap:30px}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .step{border-right:0; border-bottom:2px solid var(--bd)}
+  .step:last-child{border-bottom:0}
+  .feats{grid-template-columns:minmax(0,1fr)}
+  .sh .sub{margin-left:0; text-align:left}
+  .setupgrid{display:flex; flex-direction:column; gap:20px; padding-bottom:108px}
+  .col-reel{position:static; order:-1; width:100%; min-width:0}
+  .setupgrid>*{width:100%; min-width:0}
+  .actions{position:fixed; left:0; right:0; bottom:0; z-index:55; background:var(--bg); border-top:2px solid var(--bd);
+    padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px)); flex-wrap:nowrap}
+  .actions .btn{flex:1 1 0; min-width:0; padding-inline:12px}
+  .band{padding-block:56px}
+}
+@media (max-width:760px){
+  .links{display:none}
+  .tabs{margin-inline:0}
+}
+@media (max-width:560px){
+  .dailyin{flex-direction:column; align-items:flex-start; gap:10px}
+  .dmain{flex:none; width:100%}
+  .dailyin .btn{width:100%}
+  .cta2{grid-template-columns:1fr}
+  .facts .fact:last-child:nth-child(odd){grid-column:1/-1}
+  .cta{padding:40px 24px; box-shadow:6px 6px 0 var(--bd)}
+  .klist li{grid-template-columns:18px 3.6rem 1fr auto; gap:10px}
+}
+@media (max-width:520px){
+  .item{grid-template-columns:auto minmax(0,1fr); grid-template-areas:"star tt" ". btn"}
+  .item .hbtn{justify-self:start}
+  .barrow{grid-template-columns:minmax(80px,110px) 1fr auto}
+  .appin{flex-wrap:wrap; padding-block:6px}
+  .tabs{order:3; width:100%; justify-content:center}
+  .navin{gap:8px} .brand{font-size:1.1rem} .mark{width:30px; height:30px}
+}
+@media (max-width:380px){.brand{font-size:1.1rem} .mark{display:none}}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .rw.cur.flip,.rw.cur.land{animation:none}
+  .track{animation:none}
+  .ticker{overflow-x:auto}
+  .herodemo .reel{transform:none}
+  .flame[data-tier="5"] .fl,.sflame .fl.glow{animation:none}
+  .btn,.chip,.gcard{transition:none}
+}
+/* ---- versi tenang: garis tipis, bayangan lembut, tanpa miring, ruang lebih lega ---- */
+:root{--bg:#F6F3EC; --surface:#FFFFFF; --line:#E4DFD2; --bd:#CFC8B6; --r:10px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#13120F; --surface:#1C1A16; --line:#2B2822; --bd:#3A362D}}
+:root[data-theme="dark"]{--bg:#13120F; --surface:#1C1A16; --line:#2B2822; --bd:#3A362D}
+body{font-size:17px; line-height:1.65}
+h1{font-size:clamp(2rem,4.6vw,3.3rem); letter-spacing:-.03em; line-height:1.08}
+h2{font-size:clamp(1.7rem,3.8vw,2.4rem)}
+.btn{border-width:1px; box-shadow:0 1px 2px rgba(0,0,0,.08); border-radius:var(--r)}
+.btn:hover:not(:disabled){transform:translateY(-1px); box-shadow:0 4px 10px rgba(0,0,0,.12)}
+.btn:active:not(:disabled){transform:none; box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.btn-primary{border-color:transparent}
+.btn-quiet,.btn-icon{border-color:transparent}
+kbd{border-width:1px; box-shadow:none}
+.nav,.appbar{border-bottom:1px solid var(--line)}
+.mark{border:0; box-shadow:none; border-radius:9px}
+.links a{border-bottom:0; color:var(--muted); font-weight:500}
+.links a:hover{color:var(--ink)}
+.band{padding-block:96px}
+.band.alt{border-block:1px solid var(--line)}
+.sh{border-bottom:1px solid var(--line); margin-bottom:40px}
+.sn{display:none}
+.hero{background-image:none; padding-block:72px 88px}
+.kicker span{border:0; background:var(--line); font:600 .8rem var(--f-body); letter-spacing:.02em; text-transform:none; padding:6px 14px}
+h1 mark{background:none; color:var(--accent); padding:0; transform:none; border-radius:0}
+.lede{font-size:1.12rem; line-height:1.7}
+.badges{font:500 .88rem var(--f-body)}
+.cta2{max-width:500px}
+.herodemo .reel{transform:none}
+.reel{border:0; box-shadow:0 18px 40px -18px rgba(0,0,0,.45); border-radius:18px}
+.reel .eyebrow{background:color-mix(in srgb, var(--stage-ink) 9%, transparent); color:var(--stage-ink); font:600 .75rem var(--f-body); text-transform:none; letter-spacing:.02em; border-radius:99px; padding:4px 12px}
+.rw.cur{font-weight:700}
+.eyebrow{font:600 .78rem var(--f-body); letter-spacing:.06em}
+.daily{border-block:1px solid var(--line)}
+.dtag{background:var(--line); color:var(--ink); font:600 .8rem var(--f-body); text-transform:none; letter-spacing:0; border-radius:99px; padding:5px 12px}
+.ticker{background:var(--surface); color:var(--muted); border-bottom:1px solid var(--line)}
+.ticker.dark{background:var(--bg); color:var(--muted)}
+.pill{font:500 .98rem var(--f-body); text-transform:none; padding:13px 6px 13px 20px}
+.pill::after{content:"\00b7"; margin-left:20px; opacity:.6}
+.track{animation-duration:160s}.track.rev{animation-duration:190s}
+.steps{border:1px solid var(--line); box-shadow:none; border-radius:16px}
+.step{border-right:1px solid var(--line); padding:32px 28px}
+.num{font:700 3rem/1 var(--f-display); letter-spacing:-.03em}
+.gsec-head{font:700 .82rem var(--f-body); letter-spacing:.08em; color:var(--muted)}
+.gsec-head::after{height:1px; background:var(--line)}
+.gcard{border:1px solid var(--line); background:var(--surface); border-radius:14px; padding:18px}
+.gcard:hover{transform:translateY(-2px); box-shadow:0 8px 20px -10px rgba(0,0,0,.25)}
+.gcard .cnt{background:var(--line); color:var(--muted); font:600 .75rem var(--f-body)}
+.kbar{border:1px solid var(--line); box-shadow:none; border-radius:10px}
+.kbar .k2{background:var(--line)}
+.klist li{border-bottom:1px solid var(--line)}
+.klist .dot{border:0; border-radius:50%; width:12px; height:12px}
+.klist .d2{background:var(--muted)}
+.klist em{font:700 1rem var(--f-display)}
+.tips li{border-top:1px solid var(--line)}
+.tips li:last-child{border-bottom:1px solid var(--line)}
+.tips li::before{font:600 .9rem var(--f-body)}
+.feat{border-top:1px solid var(--line); padding:22px 0 26px}
+.fico{font:600 .85rem var(--f-body); color:var(--muted)}
+details{border:1px solid var(--line); background:var(--surface); border-radius:14px}
+details[open]{box-shadow:none; border-color:var(--bd)}
+summary{font-weight:700}
+.cta{box-shadow:none; border:0; border-radius:22px; padding:64px 40px}
+.cta .btn{background:var(--surface); color:var(--ink)}
+.foot{border-top:1px solid var(--line)}
+.wordmark{font-size:clamp(2.4rem,9vw,6rem); color:var(--line); text-transform:none; letter-spacing:-.04em}
+.chip{border-width:1px; box-shadow:none; border-radius:var(--r)}
+.chip:hover:not(:disabled){transform:none; box-shadow:none; border-color:var(--ink)}
+.chip[aria-pressed="true"]{transform:none; box-shadow:none; border-color:transparent}
+.tgbox{border-width:1px}
+.tg input:checked + .tgbox{box-shadow:none; border-color:var(--accent)}
+@supports (background: color-mix(in srgb, red, blue)){.tg input:checked + .tgbox{box-shadow:none; border-color:var(--accent)}}
+textarea{border-width:1px}
+.bar,.bar2,.sbar{border-width:0; background:var(--line); border-radius:99px}
+.bar i,.bar2 i{border-radius:99px}
+.tab[aria-selected="true"]{border-color:transparent}
+.fact,.item{border:1px solid var(--line); border-radius:14px}
+.empty{border-width:1px}
+.panel{border:1px solid var(--line); box-shadow:0 24px 60px -20px rgba(0,0,0,.5); border-radius:18px}
+.opt{border-width:1px; box-shadow:none; border-radius:var(--r)}
+.opt[aria-pressed="true"]{transform:none; border-color:transparent}
+.sw{border:0; box-shadow:none}
+.sw[aria-pressed="true"]{transform:none; outline:2px solid var(--ink); outline-offset:3px}
+.flame{border:1px solid var(--line); box-shadow:none; border-radius:99px; padding-inline:12px}
+.flame:hover{transform:none; box-shadow:none}
+.dotd{border-width:1px}
+.warnbar{font-weight:600}
+@media (max-width:900px){.band{padding-block:64px}.step{border-right:0; border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.actions{border-top:1px solid var(--line)}.hero{padding-block:44px 56px}}
+@media (max-width:560px){.cta{padding:44px 24px}}
+.btn-quiet,.btn-icon,.btn-quiet:hover:not(:disabled),.btn-icon:hover:not(:disabled){box-shadow:none!important; transform:none!important}
+/* ---- versi tengah: tegas dan berbatas jelas, tetap nyaman di mata ---- */
+.sn{display:inline-grid; place-items:center; min-width:2.4rem; height:2.4rem; padding:0 8px; border-radius:99px; background:var(--accent); color:var(--accent-ink); font:700 .95rem var(--f-display); letter-spacing:0}
+.sh{border-bottom:2px solid var(--ink); padding-bottom:18px; margin-bottom:44px; align-items:center}
+h2{font-size:clamp(2rem,4.6vw,3rem); letter-spacing:-.035em}
+.band{border-top:2px solid var(--ink)}
+.band.alt{background:var(--surface); border-block:2px solid var(--ink)}
+.band + .band.alt{border-top:2px solid var(--ink)}
+.daily{border-block:2px solid var(--ink); background:var(--bg)}
+.dtag{background:var(--ink); color:var(--bg)}
+.nav,.appbar{border-bottom:2px solid var(--ink)}
+.foot{border-top:2px solid var(--ink)}
+h1 mark{background:var(--accent); color:var(--accent-ink); padding:0 .16em; border-radius:8px; display:inline-block; transform:none}
+.hero{background:var(--bg)}
+.ticker{background:var(--accent); color:var(--accent-ink); border-bottom:0}
+.ticker.dark{background:var(--ink); color:var(--bg)}
+.pill{font-weight:600}
+.pill::after{content:"\2726"; opacity:.6}
+.steps{border:2px solid var(--ink); border-radius:16px; background:var(--surface)}
+.step{border-right:2px solid var(--ink)}
+.num{font:800 4rem/1 var(--f-display); color:var(--accent)}
+.gcard{border:2px solid var(--ink); background:var(--bg)}
+.gcard:hover{box-shadow:0 0 0 3px var(--accent); transform:none}
+.gcard .cnt{background:var(--ink); color:var(--bg)}
+.gsec-head{color:var(--ink); font-size:.9rem}
+.gsec-head::after{height:2px; background:var(--ink)}
+details{border:2px solid var(--ink); background:var(--bg)}
+details[open]{border-color:var(--ink); background:var(--surface)}
+.feat{border-top:2px solid var(--ink)}
+.fico{color:var(--accent); font:800 1.05rem var(--f-display)}
+.reel{border:2px solid var(--ink); box-shadow:6px 6px 0 var(--accent); border-radius:18px}
+.btn{border-width:2px; border-color:var(--ink)}
+.btn-primary{border-color:var(--ink)}
+.btn-quiet,.btn-icon{border-color:transparent}
+.flame{border:2px solid var(--ink)}
+.fact,.item{border:2px solid var(--ink)}
+.chip{border-width:2px; border-color:var(--ink)}
+.chip[aria-pressed="true"]{border-color:var(--ink)}
+.opt{border-width:2px; border-color:var(--ink)}
+.opt[aria-pressed="true"]{border-color:var(--ink)}
+.tgbox{border:2px solid var(--line)}
+.panel{border:2px solid var(--ink)}
+/* bagian Kerangka: ikut tema (terang di mode terang, gelap di mode gelap) */
+#kerangka{background:color-mix(in srgb, var(--accent) 7%, var(--bg))}
+#kerangka .kbar{border:2px solid var(--ink)}
+#kerangka .kbar .k2{background:var(--line)}
+#kerangka .kbar .k3{background:var(--ink)}
+@media (max-width:560px){
+  .klist li{grid-template-columns:14px 3.2rem 1fr; row-gap:2px}
+  .klist li span:last-child{grid-column:3; text-align:left}
+}
+/* penutup */
+.cta{border:2px solid var(--ink); box-shadow:6px 6px 0 var(--ink)}
+.cta .btn{background:var(--ink); color:var(--bg)}
+.wordmark{color:var(--ink); font-size:clamp(2.6rem,11vw,7rem)}
+@media (max-width:900px){.step{border-right:0; border-bottom:2px solid var(--ink)}.step:last-child{border-bottom:0}.actions{border-top:2px solid var(--ink)}}
+.tabs.off{visibility:hidden}
+@media (max-width:520px){.tabs.off{display:none}}
+.btn-danger{background:#D92D20; color:#fff; border-color:#D92D20}
+.btn-danger:hover:not(:disabled){background:#B42318; border-color:#B42318}
+/* ---- rapat dan jelas: ruang kosong dikurangi, garis tidak dobel ---- */
+.band{padding-block:64px}
+.hero{padding-block:44px 56px; background:radial-gradient(900px 420px at 85% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%), var(--bg)}
+.herogrid{gap:40px}
+.herotxt{gap:18px}
+.sh{border-bottom:0; padding-bottom:0; margin-bottom:28px}
+.sh .sub{max-width:44ch}
+.band{border-top:1px solid var(--bd)}
+.band.alt,#kerangka{border-block:1px solid var(--bd)}
+.daily{border-block:1px solid var(--bd)}
+.nav,.appbar{border-bottom:1px solid var(--bd)}
+.foot{border-top:1px solid var(--bd); padding-block:32px}
+.steps{box-shadow:none}
+.step{padding:24px 24px 26px; background:var(--surface)}
+.num{font-size:3.2rem}
+.gcard{border:1px solid var(--bd); background:var(--surface)}
+.gcard:hover{box-shadow:0 0 0 2px var(--accent)}
+.gsec-head::after{height:1px; background:var(--bd)}
+.gsec-head{margin:26px 0 12px}
+details{border:1px solid var(--bd); background:var(--surface)}
+details[open]{border-color:var(--ink)}
+.faq{gap:10px}
+.feat{border-top:1px solid var(--bd); padding:16px 0 20px}
+.feats{gap:0 40px}
+.fact,.item{border:1px solid var(--bd); background:var(--surface)}
+.tgbox{border:1px solid var(--bd)}
+.tg input:checked + .tgbox{border:2px solid var(--accent)}
+.chip,.opt{border:1px solid var(--bd)}
+.chip[aria-pressed="true"],.opt[aria-pressed="true"]{border-color:var(--accent)}
+.flame{border:1px solid var(--bd)}
+.panel{border:1px solid var(--bd)}
+.cta{padding:44px 32px; gap:18px}
+.ticker .pill{padding-block:10px}
+.dailyin{padding-block:14px}
+.appmain{padding-block:22px 40px}
+.setupgrid{gap:28px}
+.stack{gap:16px}
+.wordmark{font-size:clamp(2.2rem,9vw,5rem)}
+@media (max-width:900px){.band{padding-block:44px}.hero{padding-block:30px 40px}.step{border-bottom:1px solid var(--bd)}.actions{border-top:1px solid var(--bd)}}
+.herodemo .rw.cur{font-size:clamp(1.6rem,3.2vw,2.3rem)}
+.herodemo .rows{min-height:13rem}
+</style>
+
+
+<!-- ================= SITUS ================= -->
+<div class="warnbar" id="store-warn" role="status" hidden>Penyimpanan browser tidak tersedia. Riwayat, catatan, dan streak tidak akan tersimpan saat halaman ditutup.</div>
+<div id="site">
+  <header class="nav">
+    <div class="in navin">
+      <a class="brand" href="#beranda" data-go="beranda"><span class="mark" aria-hidden="true"><svg viewBox="0 0 64 64" width="22" height="22"><path d="M16 46V19l16 17 16-17v27" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Master Talk</a>
+      <nav class="links" aria-label="Navigasi">
+        <a href="#cara-main" data-go="cara-main">Cara Main</a>
+        <a href="#jenis-topik" data-go="jenis-topik">Jenis Topik</a>
+        <a href="#kerangka" data-go="kerangka">Kerangka</a>
+        <a href="#fitur" data-go="fitur">Fitur</a>
+        <a href="#pertanyaan" data-go="pertanyaan">Pertanyaan</a>
+      </nav>
+      <div class="navr">
+        <button class="flame" type="button" data-act="streak" data-tier="0" aria-label="Api streak"><svg class="fl" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2.5c.6 3.2 4.7 5.3 4.7 10a4.7 4.7 0 0 1-9.4 0c0-1.9.9-3.1 1.9-4 .1 1.4.8 2.3 1.6 2.6C10.3 7.6 10.7 5 12 2.5z" fill="currentColor"/></svg><span class="fn">0</span></button>
+        <button class="btn btn-icon" type="button" data-act="settings" aria-label="Pengaturan">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
+        </button>
+        <button class="btn btn-primary btn-sm" type="button" data-act="play">Main</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="in herogrid">
+        <div class="herotxt">
+          <p class="kicker"><span>Menguasai Seni Komunikasi</span></p>
+          <h1>Dapatkan Topik Secara Acak, <mark>Lalu Jelaskan</mark> Hingga Waktu Habis.</h1>
+          <p class="lede">Master Talk bantu kamu terbiasa ngomong di depan orang. Kamu cuma dikasih judul topik, sisanya kamu yang urus: cari bahannya, pelajari, lalu jelaskan sampai timer habis.</p>
+          <div class="cta2">
+            <button class="btn btn-primary btn-big" type="button" data-act="play">Main Sekarang</button>
+            <a class="btn btn-big" href="#cara-main" data-go="cara-main">Lihat Cara Main</a>
+          </div>
+        </div>
+        <div class="herodemo" aria-hidden="true">
+          <div class="reel">
+            <p class="eyebrow" id="hero-label">Contoh undian</p>
+            <div class="rows">
+              <div class="rw side" id="h-prev"></div>
+              <div class="rw cur" id="h-cur">?</div>
+              <div class="rw side" id="h-next"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="track" id="track1"></div></div>
+    <div class="ticker dark" aria-hidden="true"><div class="track rev" id="track2"></div></div>
+
+    <section class="daily" id="hariini">
+      <div class="in dailyin">
+        <span class="dtag">Topik Hari Ini</span>
+        <div class="dmain"><strong id="daily-topic">&nbsp;</strong><span class="dgroup" id="daily-group"></span></div>
+        <button class="btn btn-sm" type="button" id="daily-go">Latih Sekarang</button>
+      </div>
+    </section>
+
+    <section class="band" id="cara-main">
+      <div class="in">
+        <div class="sh"><span class="sn">01</span><h2>Cara Main</h2><p class="muted sub">Gampang kok, cuma tiga langkah.</p></div>
+        <ol class="steps">
+          <li class="step"><span class="num">1</span><h3>Dapatkan Topik</h3><p>Pilih jenis topik yang kamu suka, tekan Putar, dan biarkan topiknya keluar secara acak.</p></li>
+          <li class="step"><span class="num">2</span><h3>Pelajari Materinya</h3><p>Cari tahu soal topik itu selama waktu belajar yang kamu pilih. Baca, tonton, atau catat poin-poin pentingnya.</p></li>
+          <li class="step"><span class="num">3</span><h3>Jelaskan dan Kuasai</h3><p>Waktunya ngomong. Jelaskan topiknya dengan kata-katamu sendiri sampai timer habis, dan rasakan dirimu makin lancar dari sesi ke sesi. Mau selesai lebih awal? Tekan Spasi atau tombol Selesai.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band alt" id="jenis-topik">
+      <div class="in">
+        <div class="sh"><span class="sn">02</span><h2>Jenis Topik</h2><p class="muted sub">Dari sejarah kuno sampai lubang hitam. Pilih yang bikin kamu penasaran.</p></div>
+        <div id="gcards"></div>
+      </div>
+    </section>
+
+    <section class="band" id="kerangka">
+      <div class="in">
+        <div class="sh"><span class="sn">03</span><h2>Kerangka Bicara</h2><p class="muted sub">Biar ngomongnya nggak melebar ke mana-mana.</p></div>
+        <div class="kr">
+          <div class="kleft">
+            <div class="kbar" aria-hidden="true"><span class="k1"></span><span class="k2"></span><span class="k3"></span></div>
+            <ul class="klist">
+              <li><span class="dot d1"></span><em>10%</em><b>Pembuka</b><span>Satu kalimat yang menarik</span></li>
+              <li><span class="dot d2"></span><em>80%</em><b>Isi</b><span>Tiga poin utama</span></li>
+              <li><span class="dot d3"></span><em>10%</em><b>Penutup</b><span>Satu kesimpulan</span></li>
+            </ul>
+          </div>
+          <ol class="tips">
+            <li>Buka dengan pertanyaan atau fakta yang bikin orang penasaran. Nggak perlu sapaan panjang.</li>
+            <li>Cukup tiga poin. Lebih sedikit lebih gampang diingat, dan lebih gampang dipahami.</li>
+            <li>Kasih satu contoh nyata untuk tiap poin biar ceritamu terasa hidup.</li>
+            <li>Pelan-pelan aja. Berhenti sebentar antar poin itu wajar, kok.</li>
+            <li>Tutup dengan satu kalimat rangkuman, lalu berhenti. Nggak usah ditambah-tambahi.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="band alt" id="fitur">
+      <div class="in">
+        <div class="sh"><span class="sn">04</span><h2>Fitur</h2><p class="muted sub">Satu topik, satu timer, dan kamu yang ngomong.</p></div>
+        <div class="feats">
+          <div class="feat"><span class="fico" aria-hidden="true">01</span><h3>Topik acak, nggak ngulang</h3><p>Satu judul dari ribuan topik. Yang sudah keluar nggak muncul lagi sampai semua topik di jenis pilihanmu kebagian.</p></div>
+          <div class="feat"><span class="fico" aria-hidden="true">02</span><h3>Timer 2 sampai 10 menit</h3><p>Ada hitung mundur 3 detik biar kamu siap, lalu bunyi pengingat saat tersisa 1 menit, 30 detik, dan 10 detik.</p></div>
+          <div class="feat"><span class="fico" aria-hidden="true">03</span><h3>Waktu belajar dan catatan</h3><p>Mau belajar dulu? Pilih 5, 10, atau 15 menit, atau lewati aja. Poin penting bisa kamu catat dan tersimpan per topik.</p></div>
+          <div class="feat"><span class="fico" aria-hidden="true">04</span><h3>Api streak harian</h3><p>Latihan tiap hari biar apimu terus nyala. Warnanya berubah di hari ke-7, 14, 30, dan 50.</p></div>
+          <div class="feat"><span class="fico" aria-hidden="true">05</span><h3>Riwayat dan favorit</h3><p>Lihat lagi topik yang pernah kamu bawakan, tandai yang paling seru, dan ulangi dengan satu ketukan.</p></div>
+          <div class="feat"><span class="fico" aria-hidden="true">06</span><h3>Statistik</h3><p>Berapa sesi dan berapa menit kamu ngomong, plus rata-rata durasinya. Lengkap dengan kalender 7 hari terakhir.</p></div>
+          <div class="feat"><span class="fico" aria-hidden="true">07</span><h3>Suara dan tampilan</h3><p>Atur volume (sampai senyap), pilih 4 gaya suara, mode terang atau gelap, dan 6 warna tema.</p></div>
+          <div class="feat"><span class="fico" aria-hidden="true">08</span><h3>Cadangan data</h3><p>Salin kode cadangan, lalu pulihkan kapan pun di browser atau perangkat lain.</p></div>
+          <div class="feat"><span class="fico" aria-hidden="true">09</span><h3>Topik Hari Ini</h3><p>Satu topik pilihan yang berganti tiap hari. Pas kalau kamu bingung mau mulai dari mana.</p></div>
+          <div class="feat"><span class="fico" aria-hidden="true">10</span><h3>Tanpa akun, tanpa mikrofon</h3><p>Nggak perlu daftar dan nggak ada rekaman suara. Semua tersimpan di browsermu.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="pertanyaan">
+      <div class="in">
+        <div class="sh"><span class="sn">05</span><h2>Pertanyaan</h2><p class="muted sub">Yang sering ditanyain.</p></div>
+        <div class="faq">
+          <details><summary>Apa itu Master Talk?</summary><p>Tempat latihan ngomong di depan orang. Kamu dapat topik acak, belajar sendiri, lalu menjelaskannya keras-keras sampai waktu habis. Lama-lama kamu jadi makin lancar menyusun dan menyampaikan penjelasan.</p></details>
+          <details><summary>Apakah Master Talk ngasih materinya?</summary><p>Nggak. Kamu cuma dikasih judul topik. Mencari bahan sendiri itu bagian dari latihan, sekalian kamu belajar hal baru sebelum membahasnya.</p></details>
+          <details><summary>Urutan latihannya gimana?</summary><p>Pilih durasi dan jenis topik, tekan Putar, pelajari materinya (pakai waktu belajar kalau mau), lalu tekan Mulai Bicara. Setelah hitung mundur 3 detik, timer jalan sampai habis atau sampai kamu menekan Selesai.</p></details>
+          <details><summary>Gimana caranya latihan yang efektif?</summary><p>Mulai dari 2 sampai 4 menit dulu, lalu naikkan pelan-pelan. Siapkan tiga poin, buka dengan satu kalimat menarik, jelaskan isinya, dan tutup dengan satu kesimpulan. Ulangi topik yang sama beberapa hari lagi, kamu bakal lihat bedanya.</p></details>
+          <details><summary>Api streak itu gimana?</summary><p>Tiap hari kamu menyelesaikan minimal satu sesi, streakmu nambah satu. Kalau ada hari yang bolong, streak mulai lagi dari nol. Warna api berubah di hari ke-1 (kuning), 7 (oranye), 14 (merah), 30 (ungu), dan 50 (ungu menyala).</p></details>
+          <details><summary>Suaraku direkam atau dinilai?</summary><p>Nggak. Master Talk nggak memakai mikrofon dan nggak menilai suaramu. Kamu sendiri yang menilai: waktunya kepakai penuh nggak, penjelasannya runtut nggak, dan apa yang mau diperbaiki.</p></details>
+          <details><summary>Datanya disimpan di mana?</summary><p>Di browser kamu aja, nggak dikirim ke server mana pun. Artinya data nggak pindah antar perangkat dan bisa hilang kalau data situs dihapus. Biar aman, simpan kode cadangan dari Pengaturan.</p></details>
+          <details><summary>Gimana cara cadangin dan pulihin data?</summary><p>Buka Pengaturan, tekan Buat Kode Cadangan, lalu simpan kodenya di tempat aman, misalnya catatan di HP. Untuk memulihkan, tempel kodenya di kotak yang sama dan tekan Pulihkan dari Kode.</p></details>
+          <details><summary>Apakah topiknya bisa habis?</summary><p>Nggak bakal terasa. Topik yang sudah keluar disembunyikan sampai semua topik di jenis pilihanmu kebagian, baru daftarnya diulang dari awal.</p></details>
+          <details><summary>Bisa dipakai di HP?</summary><p>Bisa banget. Tampilan menyesuaikan layar, dan tombol Putar serta Mulai Bicara selalu ada di bagian bawah. Di komputer, tekan Spasi untuk lanjut atau mengakhiri sesi lebih cepat.</p></details>
+          <details><summary>Siapa yang bikin Master Talk?</summary><p>Christopher Kent Pratama, yang pengen punya tempat latihan bicara yang simpel dan nggak ribet.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="in">
+        <div class="cta">
+          <h2>Yuk, mulai ngomong.</h2>
+          <p>Putar topik pertamamu dan lihat seberapa jauh kamu bisa menjelaskannya.</p>
+          <button class="btn btn-big" type="button" data-act="play">Main Sekarang</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot"><div class="in">
+    <div class="wordmark" aria-hidden="true">Master Talk</div>
+    <div class="footrow"><span>Dibuat oleh Christopher Kent Pratama</span><span class="muted">Latihan ngomong spontan</span></div>
+    <p class="small">Topik cuma berupa judul. Cek faktanya dari sumber yang kamu percaya, ya.</p>
+  </div></footer>
+</div>
+
+<!-- ================= RUANG LATIHAN ================= -->
+<div id="app" hidden>
+  <header class="appbar">
+    <div class="in appin">
+      <button class="btn btn-quiet" type="button" id="app-home"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Beranda</button>
+      <div class="tabs" id="tabs" role="tablist" aria-label="Menu latihan">
+        <button class="tab" type="button" role="tab" data-tab="setup" aria-selected="true">Latihan</button>
+        <button class="tab" type="button" role="tab" data-tab="history" aria-selected="false">Riwayat</button>
+        <button class="tab" type="button" role="tab" data-tab="stats" aria-selected="false">Statistik</button>
+      </div>
+      <button class="flame push" type="button" data-act="streak" data-tier="0" aria-label="Api streak"><svg class="fl" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2.5c.6 3.2 4.7 5.3 4.7 10a4.7 4.7 0 0 1-9.4 0c0-1.9.9-3.1 1.9-4 .1 1.4.8 2.3 1.6 2.6C10.3 7.6 10.7 5 12 2.5z" fill="currentColor"/></svg><span class="fn">0</span></button>
+      <button class="btn btn-icon" type="button" data-act="settings" aria-label="Pengaturan">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="in appmain">
+
+    <!-- Latihan -->
+    <section data-screen="setup">
+      <div class="setupgrid">
+        <div class="stack">
+          <div class="block">
+            <p class="eyebrow">Durasi penjelasan</p>
+            <div class="chips" id="chips" role="group" aria-label="Durasi penjelasan"></div>
+          </div>
+          <div class="block">
+            <p class="eyebrow">Waktu belajar sebelum bicara</p>
+            <div class="chips" id="preps" role="group" aria-label="Waktu belajar"></div>
+          </div>
+          <div class="block">
+            <div class="row spread" style="flex-wrap:nowrap;gap:8px">
+              <p class="eyebrow">Jenis topik</p>
+              <div class="row" style="gap:0;flex-wrap:nowrap">
+                <button class="btn btn-quiet" id="sel-all" type="button">Pilih semua</button>
+                <button class="btn btn-quiet" id="sel-none" type="button">Kosongkan</button>
+              </div>
+            </div>
+            <div id="groups" role="group" aria-label="Jenis topik" class="stack" style="gap:14px"></div>
+            <p class="status" id="pool-info" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="col-reel">
+          <div class="reel" id="reel">
+            <p class="eyebrow" id="reel-label">Tekan putar</p>
+            <div class="rows" aria-hidden="true">
+              <div class="rw side" id="rw-prev"></div>
+              <div class="rw cur" id="rw-cur">?</div>
+              <div class="rw side" id="rw-next"></div>
+            </div>
+            <span class="sr" id="reel-sr" aria-live="polite"></span>
+          </div>
+          <p class="status" id="spin-note" aria-live="polite"></p>
+          <div class="actions">
+            <button class="btn btn-primary btn-big" id="btn-spin" type="button">Putar</button>
+            <button class="btn btn-big" id="btn-talk" type="button" hidden>Mulai Bicara</button>
+          </div>
+          <div class="block" id="notes-setup-wrap" hidden>
+            <label class="eyebrow" for="notes-setup">Catatan untuk topik ini</label>
+            <textarea id="notes-setup" placeholder="Tulis poin penting yang kamu temukan."></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Riwayat -->
+    <section data-screen="history" class="stack" hidden>
+      <div class="row spread">
+        <h2>Riwayat</h2>
+        <div class="seg hf" role="group" aria-label="Filter riwayat">
+          <button class="opt" type="button" id="hf-all" aria-pressed="true">Semua</button>
+          <button class="opt" type="button" id="hf-fav" aria-pressed="false">Favorit</button>
+        </div>
+      </div>
+      <div class="list" id="hlist"></div>
+    </section>
+
+    <!-- Statistik -->
+    <section data-screen="stats" class="stack" hidden>
+      <h2>Statistik</h2>
+      <div class="facts" id="sfacts"></div>
+      <div class="block">
+        <p class="eyebrow">Jenis yang paling sering keluar</p>
+        <div class="stack" style="gap:10px" id="sbars"></div>
+      </div>
+    </section>
+
+    <!-- Sesi -->
+    <section data-screen="session" class="stack sess" hidden>
+      <div class="row spread">
+        <div style="min-width:0"><p class="eyebrow" id="s-group">Topik</p><p class="topicbar" id="s-topic"></p></div>
+        <button class="btn btn-quiet" id="btn-exit" type="button">Keluar</button>
+      </div>
+      <div class="stage">
+        <div class="phase" id="phase-name" aria-live="polite"></div>
+        <p class="hint" id="phase-hint"></p>
+        <div class="timer" id="timer">0:00</div>
+        <div class="bar" id="bar"><i id="bar-fill"></i></div>
+      </div>
+      <div class="row" style="justify-content:center">
+        <button class="btn btn-primary btn-big" id="btn-done" type="button">Selesai</button>
+      </div>
+      <p class="muted small" style="text-align:center">Tekan <kbd>Spasi</kbd> atau tombol untuk lanjut atau mengakhiri lebih cepat.</p>
+      <div class="block">
+        <label class="eyebrow" for="notes-session">Catatan</label>
+        <textarea id="notes-session" placeholder="Tulis poin penting di sini."></textarea>
+      </div>
+    </section>
+
+    <!-- Selesai -->
+    <section data-screen="done" class="stack sess" hidden>
+      <div>
+        <p class="eyebrow" id="d-group">Selesai</p>
+        <h2 id="d-topic"></h2>
+      </div>
+      <div class="facts">
+        <div class="fact"><span class="eyebrow">Terpakai</span><span class="v" id="d-used">0:00</span></div>
+        <div class="fact"><span class="eyebrow">Jatah</span><span class="v" id="d-quota">0:00</span></div>
+        <div class="fact"><span class="eyebrow">Streak</span><span class="v" id="d-streak">0 hari</span></div>
+      </div>
+      <p class="muted" id="d-msg"></p>
+      <div class="row">
+        <button class="btn btn-primary btn-big" id="btn-again" type="button">Putar Lagi</button>
+        <button class="btn" id="d-fav" type="button" aria-pressed="false">Tandai Favorit</button>
+        <button class="btn" id="d-hist" type="button">Riwayat</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ================= PENGATURAN ================= -->
+<div class="modal" id="modal" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <div class="row spread">
+      <h3 id="m-title">Pengaturan</h3>
+      <button class="btn btn-quiet" type="button" id="m-close">Tutup</button>
+    </div>
+
+    <div class="block">
+      <div class="row spread"><label class="eyebrow" for="set-vol">Volume</label><span class="small muted" id="vol-val">75</span></div>
+      <input type="range" id="set-vol" min="0" max="100" step="5" value="75">
+    </div>
+
+    <div class="block">
+      <p class="eyebrow">Gaya suara</p>
+      <div class="stack" style="gap:8px" id="styles"></div>
+    </div>
+
+    <label class="check"><input type="checkbox" id="set-warn"><span>Peringatan di sisa 1 menit dan 30 detik</span></label>
+
+    <div class="block">
+      <p class="eyebrow">Tampilan</p>
+      <div class="seg" id="themes" role="group" aria-label="Tampilan"></div>
+    </div>
+
+    <div class="block">
+      <p class="eyebrow">Warna tema</p>
+      <div class="swatches" id="swatches" role="group" aria-label="Warna tema"></div>
+    </div>
+
+    <div class="block">
+      <p class="eyebrow">Data</p>
+      <p class="small muted">Datamu hanya tersimpan di browser ini. Buat kode cadangan agar streak, riwayat, dan catatan bisa dipulihkan.</p>
+      <textarea id="backup-box" spellcheck="false" aria-label="Kode cadangan" placeholder="Kode cadangan muncul di sini. Untuk memulihkan, tempel kode lalu tekan Pulihkan dari Kode."></textarea>
+      <div class="row">
+        <button class="btn btn-sm" type="button" id="backup-make">Buat Kode Cadangan</button>
+        <button class="btn btn-sm" type="button" id="backup-restore">Pulihkan dari Kode</button>
+      </div>
+      <p class="status" id="backup-note" aria-live="polite"></p>
+      <button class="btn btn-danger" type="button" id="reset-data">Hapus Data</button>
+      <p class="status" id="reset-note" aria-live="polite"></p>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="smodal" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="sm-title">
+    <div class="row spread"><h3 id="sm-title">Api Streak</h3><button class="btn btn-quiet" type="button" id="sm-close">Tutup</button></div>
+    <div id="sbody" class="stack" style="gap:18px"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  const TOPICS = {"Sejarah": ["Asal Usul Manusia", "Neanderthal", "Homo Erectus", "Penemuan Api", "Lukisan Gua Lascaux", "Revolusi Pertanian", "Asal Mula Bahasa", "Sejarah Tulisan", "Sejarah Angka dan Bilangan", "Sejarah Kalender", "Kota Pertama di Dunia", "Zaman Perunggu", "Keruntuhan Zaman Perunggu", "Mesir Kuno", "Piramida Giza", "Tutankhamun", "Cleopatra", "Ramses II", "Batu Rosetta", "Peradaban Sumeria", "Hukum Hammurabi", "Babilonia", "Bangsa Fenisia", "Kartago", "Perang Punik", "Kekaisaran Persia", "Cyrus Agung", "Pertempuran Marathon", "Pertempuran Thermopylae", "Demokrasi Athena", "Sparta", "Perang Peloponnesos", "Alexander Agung", "Perpustakaan Alexandria", "Republik Romawi", "Julius Caesar", "Pembunuhan Julius Caesar", "Kaisar Augustus", "Kekaisaran Romawi", "Colosseum", "Gladiator Romawi", "Spartacus", "Kaisar Nero", "Jatuhnya Roma Barat", "Kekaisaran Bizantium", "Konstantinus Agung", "Hagia Sophia", "Jatuhnya Konstantinopel", "Kerajaan Aksum", "Mansa Musa dan Kekaisaran Mali", "Zimbabwe Raya", "Dinasti Qin", "Tembok Besar Tiongkok", "Prajurit Terakota", "Dinasti Han", "Jalur Sutra", "Dinasti Tang", "Laksamana Zheng He", "Peradaban Lembah Indus", "Kekaisaran Maurya", "Kekaisaran Mughal", "Kekaisaran Mongol", "Genghis Khan", "Kubilai Khan", "Marco Polo", "Samurai Jepang", "Kekaisaran Khmer", "Kerajaan Sriwijaya", "Kerajaan Majapahit", "Kekhalifahan Abbasiyah", "Zaman Keemasan Islam", "Rumah Kebijaksanaan Baghdad", "Perang Salib", "Saladin", "Kekaisaran Ottoman", "Suleiman Agung", "Wabah Maut Hitam", "Charlemagne", "Bangsa Viking", "Penaklukan Norman 1066", "Magna Carta", "Perang Seratus Tahun", "Joan of Arc", "Renaisans", "Reformasi Protestan", "Inkuisisi Spanyol", "Pelayaran Columbus", "Kekaisaran Aztek", "Kekaisaran Inka", "Penaklukan Aztek", "Perdagangan Budak Atlantik", "Perang Tiga Puluh Tahun", "Ratu Elizabeth I", "Kekalahan Armada Spanyol", "Perang Saudara Inggris", "Zaman Pencerahan", "Louis XIV", "Revolusi Amerika", "Revolusi Prancis", "Napoleon Bonaparte", "Pertempuran Waterloo", "Revolusi Haiti", "Revolusi Industri", "Perang Saudara Amerika", "Unifikasi Jerman", "Perang Candu", "Perebutan Afrika", "Restorasi Meiji", "Perang Dunia I", "Pembunuhan Franz Ferdinand", "Revolusi Rusia", "Akhir Dinasti Romanov", "Flu Spanyol 1918", "Depresi Besar 1929", "Kebangkitan Fasisme", "Perang Dunia II", "Pertempuran Britania", "Pertempuran Stalingrad", "Pendaratan Normandia", "Holocaust", "Serangan Pearl Harbor", "Pertempuran Midway", "Bom Atom Hiroshima", "Perang Dingin", "Krisis Rudal Kuba", "Tembok Berlin", "Perang Korea", "Perang Vietnam", "Gerakan Hak Sipil Amerika", "Dekolonisasi Asia dan Afrika", "Konferensi Asia-Afrika", "Proklamasi Kemerdekaan Indonesia", "Kemerdekaan India", "Revolusi Kebudayaan Tiongkok", "Revolusi Iran", "Runtuhnya Uni Soviet", "Jatuhnya Tembok Berlin", "Pembentukan Uni Eropa", "Apartheid", "Hak Pilih Perempuan", "Ekspedisi Kutub Selatan", "Ekspedisi Scott", "Pelayaran Magellan", "Vasco da Gama", "Pelayaran James Cook", "Penaklukan Everest", "Lewis dan Clark", "Ekspedisi Livingstone", "Penjelajahan Kutub Utara", "Leif Erikson", "Penyelaman Bathyscaphe Trieste", "Pelayaran Kon-Tiki", "Penerbangan Mengelilingi Dunia", "Penyeberangan Atlantik Lindbergh", "Jalur Rempah", "Penemuan Sumber Sungai Nil", "Ekspedisi Menyeberangi Australia", "Pelayaran Mengelilingi Dunia Sendirian", "Perang Troya", "Kitab Orang Mati Mesir", "Dewa-dewi Romawi", "Romulus dan Remus", "Legenda Meja Bundar", "Robin Hood", "Epos Gilgamesh", "Pompeii", "Chernobyl", "Tenggelamnya Titanic", "Kebakaran Besar London", "Kecelakaan Hindenburg", "Fukushima", "Kelaparan Besar Irlandia", "Tragedi Bhopal", "Sejarah Catur", "Permainan Papan Tertua", "Permainan Monopoli", "Kartu Remi", "Rubik's Cube", "Ekspedisi Endurance Shackleton", "Tragedi Pegunungan Andes 1972", "Penyelamatan Penambang Chile 2010", "Kapal Essex dan Paus Putih", "Alexander Selkirk", "Sekoci Kapten Bligh", "Pendaki Terjebak di Everest 1996", "Penyelamatan Gua Thailand 2018", "Juliane Koepcke di Hutan Amazon", "Poon Lim 133 Hari di Laut", "Ekspedisi Mawson di Antartika", "Saint-Exupery di Gurun Sahara", "Hugh Glass dan Beruang", "Tsutomu Yamaguchi", "Sekoci Titanic dan Carpathia", "Mundurnya Napoleon dari Rusia", "Joshua Slocum Berlayar Sendirian", "Ekspedisi Franklin yang Hilang", "Kapal USS Indianapolis", "Ekspedisi Burke dan Wills", "Perang Salib Pertama", "Pengepungan Yerusalem 1099", "Perang Salib Ketiga dan Richard si Hati Singa", "Ksatria Templar", "Perang Salib Anak-anak", "Reconquista Spanyol", "Asal Usul Bangsa Viking", "Serangan Viking ke Lindisfarne", "Kapal Panjang Viking", "Ragnar Lothbrok Antara Sejarah dan Legenda", "Ivar Tanpa Tulang", "Harald Hardrada", "Viking di Amerika Utara", "Bangsa Varangian di Rusia", "Kehidupan Sehari-hari Bangsa Viking", "Perang Viking Melawan Anglo-Saxon", "Raja Alfred Agung", "Bangsa Goth", "Atila si Hun", "Kekaisaran Franka", "Clovis dan Awal Kerajaan Prancis", "Asal Usul Olimpiade Kuno", "Asal Usul Alfabet", "Asal Usul Universitas", "Asal Usul Rumah Sakit", "Asal Usul Uang Logam", "Asal Usul Sepak Bola", "Asal Usul Negara", "Asal Usul Hukum Tertulis", "Asal Usul Musik", "Asal Usul Teh", "Asal Usul Kopi", "Asal Usul Sabun", "Asal Usul Agama Kuno", "Asal Usul Perang", "Asal Usul Bangsa Mongol", "Asal Usul Bangsa Turki", "Hannibal Barca", "Pertempuran Cannae", "Scipio Africanus", "Pertempuran Actium", "Marcus Aurelius", "Tembok Hadrian", "Pertempuran Hutan Teutoburg", "Kaisar Konstantinus dan Kekristenan", "Justinianus dan Teodora", "Kekaisaran Sassanid", "Perang Romawi-Persia", "Bangsa Etruska", "Peradaban Minoa", "Peradaban Mikenai", "Zaman Kegelapan Yunani", "Pertempuran Salamis", "Perang Persia", "Pembangunan Parthenon", "Mesopotamia", "Bangsa Asiria", "Ratu Hatshepsut", "Akhenaten dan Revolusi Agama Mesir", "Pertempuran Kadesh", "Bangsa Laut", "Pembangunan Piramida", "Peradaban Olmek", "Peradaban Maya", "Teotihuacan", "Peradaban Caral", "Tiwanaku", "Kerajaan Benin", "Kekaisaran Songhai", "Timbuktu", "Pertempuran Adwa", "Ratu Nzinga", "Shaka Zulu", "Perang Anglo-Zulu", "Kerajaan Kongo", "Kesultanan Mamluk", "Kesultanan Delhi", "Kekaisaran Chola", "Ashoka Agung", "Kekaisaran Gupta", "Dinasti Ming", "Dinasti Qing", "Kota Terlarang", "Shogun Tokugawa", "Pertempuran Sekigahara", "Invasi Mongol ke Jepang", "Pemberontakan Taiping", "Pembantaian Nanjing", "Perang Candu Kedua", "Long March Tiongkok", "Lompatan Jauh ke Depan Mao", "Kerajaan Joseon", "Perang Mawar", "Pertempuran Agincourt", "Pertempuran Hastings", "Henry VIII dan Enam Istrinya", "Maria Berdarah", "Pembantaian Hari St. Bartholomew", "Marie Antoinette", "Pemerintahan Teror Robespierre", "Perang Napoleon di Mesir", "Kongres Wina", "Perang Krimea", "Perang Boer", "Pemberontakan Sepoy 1857", "Kompeni Hindia Timur", "VOC dan Perusahaan Dagang Belanda", "Kapal Mayflower", "Demam Emas California", "Jalur Kereta Transkontinental Amerika", "Simon Bolivar", "Perang Kemerdekaan Meksiko", "Pembebasan Budak oleh Lincoln", "Perang Spanyol-Amerika", "Penjelajahan Pasifik oleh Polinesia", "Perjanjian Versailles", "Pertempuran Verdun", "Pertempuran Somme", "Gencatan Senjata Natal 1914", "Perang Parit", "Telegram Zimmermann", "Revolusi Oktober", "Stalin dan Gulag", "Kelaparan Holodomor", "Operasi Barbarossa", "Pertempuran Kursk", "Pertempuran Berlin", "Konferensi Yalta", "Proyek Manhattan", "Bom Atom Nagasaki", "Perang Pasifik", "Pertempuran Iwo Jima", "Blitz London", "Pertempuran Dunkirk", "Perlawanan Prancis", "Gerakan Pembangkangan Sipil Gandhi", "Pembagian India dan Pakistan", "Perang Enam Hari", "Krisis Suez", "Perang Teluk", "Genosida Rwanda", "Perang Yugoslavia", "Perang Salib Kedua", "Salahuddin dan Perebutan Yerusalem", "Perang Salib Keempat dan Penjarahan Konstantinopel", "Pengepungan Konstantinopel 717", "Pertempuran Tours", "Karel Agung", "William sang Penakluk", "Reformasi Martin Luther", "Keluarga Medici dan Florence", "Ivan yang Mengerikan", "Pengepungan Wina 1683", "Pembangunan Taj Mahal", "Kekaisaran Khmer dan Angkor", "Perang Sengoku Jepang", "Oda Nobunaga", "Perang Rusia-Jepang", "Pertempuran Tsushima", "Pemberontakan Boxer", "Revolusi Xinhai", "Mohenjo-daro", "Kekaisaran Akkadia", "Bangsa Het", "Kerajaan Kush di Nubia", "Perang Punisia Pertama", "Runtuhnya Zaman Perunggu", "Kekaisaran Seleukia", "Dinasti Ptolemeus", "Bangsa Celtic", "Boudica", "Jalan Raya Romawi", "Spartacus dan Pemberontakan Budak", "Julius Caesar dan Rubicon", "Nero dan Kebakaran Roma", "Perjanjian Tordesillas", "Penaklukan Aztek oleh Cortes", "Penaklukan Inka oleh Pizarro", "Pertempuran Lepanto", "Revolusi Industri Inggris", "Gerakan Luddite", "Revolusi 1848", "Bismarck dan Unifikasi Jerman", "Garibaldi dan Unifikasi Italia", "Pertempuran Gettysburg", "Jalur Kereta Bawah Tanah Amerika", "Konferensi Berlin dan Pembagian Afrika", "Perang Opium Pertama", "Revolusi Meksiko", "Perang Saudara Spanyol", "Perang Saudara Rusia", "Kebijakan New Deal", "Pendaratan D-Day", "Kebangkitan Nazi", "Malam Kristal", "Pengadilan Nuremberg", "Rencana Marshall", "Blokade Berlin", "Pembangunan Tembok Berlin", "Runtuhnya Tembok Berlin", "Skandal Watergate", "Revolusi Iran 1979", "Invasi Soviet ke Afghanistan", "Perang Falkland", "Bubarnya Uni Soviet", "Pertempuran Poitiers", "Pertempuran Manzikert", "Penaklukan Muslim Atas Persia", "Kekhalifahan Abbasiyah dan Baghdad", "Dinasti Han dan Jalur Sutra", "Pembangunan Tembok Besar Tiongkok", "Prajurit Terakota Qin Shi Huang", "Perang Tiga Kerajaan Tiongkok", "Zaman Heian Jepang", "Kerajaan Goryeo", "Kerajaan Vijayanagara", "Pertempuran Plassey", "Penaklukan Inggris Atas Bengal", "Pertempuran Yorktown", "Boston Tea Party"], "Tokoh": ["Albert Einstein", "Marie Curie", "Isaac Newton", "Leonardo da Vinci", "Galileo Galilei", "Charles Darwin", "Nikola Tesla", "Thomas Edison", "Alan Turing", "Stephen Hawking", "Aristoteles", "Socrates", "Plato", "Ibnu Sina", "Al-Khawarizmi", "Ada Lovelace", "Nicolaus Copernicus", "Johannes Kepler", "Michael Faraday", "James Clerk Maxwell", "Louis Pasteur", "Alexander Fleming", "Gregor Mendel", "Rosalind Franklin", "Neil Armstrong", "Mahatma Gandhi", "Nelson Mandela", "Martin Luther King Jr.", "Ludwig van Beethoven", "Richard Feynman", "Srinivasa Ramanujan", "Archimedes", "Pythagoras", "Euclid", "Hippokrates", "Carl Sagan", "Jane Goodall", "Florence Nightingale", "Wolfgang Amadeus Mozart", "Vincent van Gogh", "Pablo Picasso", "Hedy Lamarr", "Katherine Johnson", "Tim Berners-Lee", "Steve Jobs", "Johannes Gutenberg", "Leonhard Euler", "Carl Friedrich Gauss", "Emmy Noether", "Niels Bohr", "Roald Amundsen", "Ibnu Battuta", "Jacques Cousteau", "Sigmund Freud", "Ivan Pavlov", "Dmitri Mendeleev", "Antoine Lavoisier", "Robert Hooke", "Anton van Leeuwenhoek", "Edwin Hubble", "Georges Lemaitre", "Subrahmanyan Chandrasekhar", "Edmond Halley", "Tycho Brahe", "Hypatia dari Alexandria", "Eratosthenes", "Ptolemeus", "Ibnu Al-Haytham", "Al-Biruni", "Omar Khayyam", "Ibnu Khaldun", "Al-Jazari", "Ibnu Rusyd", "Ernest Rutherford", "Max Planck", "Werner Heisenberg", "Erwin Schrodinger", "Paul Dirac", "Enrico Fermi", "J. Robert Oppenheimer", "Lise Meitner", "Chien-Shiung Wu", "Barbara McClintock", "Dorothy Hodgkin", "Grace Hopper", "Margaret Hamilton", "John von Neumann", "Claude Shannon", "Charles Babbage", "Konrad Zuse", "Bill Gates", "Elon Musk", "Linus Torvalds", "Mark Zuckerberg", "Alfred Nobel", "Alexander Graham Bell", "Guglielmo Marconi", "Henry Ford", "Karl Benz", "Samuel Morse", "Wilbur dan Orville Wright", "Robert Goddard", "Wernher von Braun", "Sergei Korolev", "Abraham Lincoln", "Winston Churchill", "Sun Tzu", "Konfusius", "Lao Tzu", "Catherine Agung", "Ratu Victoria", "Harriet Tubman", "Frederick Douglass", "Rosa Parks", "Malala Yousafzai", "Anne Frank", "Wangari Maathai", "Bunda Teresa", "Michelangelo", "Rembrandt", "Larry Page dan Sergey Brin", "Jeff Bezos", "Soichiro Honda", "Akio Morita", "Joseph Lister", "Henri Dunant", "David Attenborough", "Rachel Carson", "Blaise Pascal", "Rene Descartes", "Immanuel Kant", "Friedrich Nietzsche", "Mustafa Kemal Ataturk", "Otto von Bismarck", "Leonidas dari Sparta", "Imhotep", "Salvador Dali", "Claude Monet", "Andy Warhol", "Bob Marley", "John Lennon", "Lionel Messi", "Serena Williams", "Michael Phelps", "Marie Tharp", "Mary Anning", "Sophie Germain", "Fibonacci", "Zhang Heng", "Ibnu Firnas", "Francis Bacon", "Christiaan Huygens", "Alessandro Volta", "Andre-Marie Ampere", "Georg Ohm"], "Fakta Dunia": ["Negara Terkecil", "Negara Terbesar", "Kota Tertinggi", "Sungai Terpanjang", "Gunung Tertinggi", "Laut Terdalam", "Pulau Terbesar", "Gurun Terbesar", "Tempat Terdingin", "Tempat Terpanas", "Tempat Terkering", "Tempat Terhujan", "Kota Tertua", "Kota Terpadat", "Negara Tanpa Tentara", "Negara Tanpa Sungai", "Bahasa Paling Banyak Dipakai", "Hewan Tercepat", "Hewan Terbesar", "Hewan Tertua", "Pohon Tertua", "Makhluk Hidup Tertua", "Benda Terbesar di Alam Semesta", "Gedung Tertinggi", "Jembatan Terpanjang", "Terowongan Terpanjang", "Mengapa Langit Biru", "Mengapa Air Laut Asin", "Mengapa Ada Akhir Pekan", "Mengapa Satu Jam 60 Menit", "Asal Nama Benua", "Uang Kertas Pertama", "Mata Uang Tertua", "Keajaiban Dunia Kuno", "Tujuh Keajaiban Dunia Baru", "Machu Picchu", "Petra", "Angkor Wat", "Chichen Itza", "Danau Terbesar", "Hari Terpanjang dan Terpendek", "Negara dengan Bahasa Terbanyak", "Pulau Paling Terpencil", "Suara Terkeras dalam Sejarah", "Kita Hanya Memakai 10 Persen Otak", "Tembok Besar Terlihat dari Antariksa", "Petir Tidak Menyambar Dua Kali", "Lidah Punya Peta Rasa", "Ikan Mas Hanya Ingat 3 Detik", "Banteng Marah Karena Warna Merah", "Rambut Tumbuh Lebih Cepat Setelah Dicukur", "Gula Membuat Anak Hiperaktif", "Darah Biru", "Napoleon Bertubuh Pendek", "Viking Bertanduk", "Orang Abad Pertengahan Mengira Bumi Datar", "Einstein Gagal Matematika", "Manusia Punya Lima Indra", "Dingin Membuat Pilek", "Memecahkan Buku Jari Menyebabkan Artritis", "Kelelawar Buta", "Burung Unta Menyembunyikan Kepala", "Mandi Setelah Makan Berbahaya", "Musim Ditentukan Jarak ke Matahari", "Antibiotik Mengobati Flu", "Bulan Purnama Membuat Orang Aneh", "Otot Berubah Jadi Lemak", "Kopi Menghambat Pertumbuhan", "Bintang Jatuh Adalah Bintang", "Negara dengan Zona Waktu Terbanyak", "Mengapa Ada Zona Waktu", "Garis Tanggal Internasional", "Mengapa Ada Tahun Kabisat", "Asal Nama Bulan", "Asal Nama Hari", "Mengapa Seminggu Tujuh Hari", "Zealandia Benua yang Tenggelam", "Negara Terbaru di Dunia", "Negara yang Sudah Tidak Ada", "Bahasa yang Hampir Punah", "Bahasa Isyarat", "Kata Terpanjang di Dunia", "Universitas Tertua", "Perusahaan Tertua", "Perpustakaan Terbesar", "Museum Terbesar", "Stadion Terbesar", "Bandara Tersibuk", "Kereta Tercepat", "Kota Termahal", "Negara Paling Bahagia", "Negara dengan Harapan Hidup Tertinggi", "Hutan Terbesar di Dunia", "Gua Terpanjang", "Air Terjun Tertinggi", "Danau Terdalam", "Pegunungan Terpanjang", "Perbatasan Terpanjang", "Negara Kepulauan Terbesar", "Matahari Tengah Malam", "Malam Kutub Berbulan-bulan", "Negara Tanpa Nyamuk", "Negara Tanpa Ibu Kota Tetap", "Kota Bawah Tanah Terbesar", "Pulau Terpadat", "Marie Antoinette dan Kue Brioche", "Columbus Membuktikan Bumi Bulat", "Kecoak Bertahan dari Ledakan Nuklir", "Kita Menelan Delapan Laba-laba Saat Tidur", "Kuku dan Rambut Tumbuh Setelah Mati", "Mencukur Membuat Bulu Lebih Lebat", "Lidah Kucing dan Susu", "Kelelawar Vampir Mengisap Darah Manusia", "Bunglon Mengubah Warna untuk Menyamar", "Berenang Setelah Makan Berbahaya", "Permen Karet Tinggal Tujuh Tahun di Perut", "Petir dan Kilat Mana yang Lebih Dulu", "Aturan Lima Detik Makanan Jatuh", "Keluar Rumah dengan Rambut Basah Membuat Sakit", "Mengapa Kita Menguap", "Negara Terkecil di Dunia", "Negara Terbesar di Dunia", "Bendera Nepal yang Bukan Persegi", "Tempat Terkering di Bumi", "Kota Terdingin yang Dihuni", "Danau Merah Muda Hillier", "Menara Miring Pisa", "Pelabuhan Tersibuk", "Mauna Kea Gunung Tertinggi dari Dasarnya", "Istanbul Kota di Dua Benua", "Garis Khatulistiwa", "Mengapa Laut Asin", "Mengapa Daun Berubah Warna di Musim Gugur", "Mengapa Es Mengapung", "Mengapa Kita Punya Sidik Jari", "Mengapa Kucing Mendengkur", "Mengapa Zebra Belang", "Mengapa Kita Punya Alis", "Mengapa Pelangi Berbentuk Lengkung", "Mengapa Kita Merinding", "Mengapa Kita Cegukan", "Kota yang Dibangun di Atas Air", "Pulau yang Hilang Ditelan Laut", "Tempat dengan Hujan Terbanyak", "Pasar Terapung Terkenal", "Kota Tertinggi di Dunia", "Negara dengan Penduduk Tertua"], "Ekonomi": ["Asal Mula Uang", "Uang Kertas", "Bursa Saham", "Inflasi", "Deflasi", "Resesi", "Pasar Bebas", "Pajak", "Utang Negara", "Perdagangan Internasional", "Perdagangan Rempah", "Tulip Mania", "Gelembung Laut Selatan", "Krisis Keuangan 2008", "Krisis Moneter Asia 1997", "Bitcoin", "OPEC dan Minyak", "Standar Emas", "Perjanjian Bretton Woods", "Adam Smith", "John Maynard Keynes", "Penawaran dan Permintaan", "Globalisasi", "Kartu Kredit", "Bunga Majemuk", "Produk Domestik Bruto", "Nilai Tukar Mata Uang", "Hiperinflasi Jerman", "Hiperinflasi Zimbabwe", "Pasar Tenaga Kerja", "Mengapa Negara Bisa Bangkrut", "Sistem Bank Sentral", "Sejarah Mata Uang Euro", "Dolar Amerika Sebagai Mata Uang Dunia", "Koin Pertama di Dunia", "Perdagangan Garam", "Gelembung Dot-com", "Krisis Utang Yunani", "Kebangkrutan Lehman Brothers", "Warren Buffett dan Investasi Nilai", "Reksa Dana", "Obligasi", "Asuransi", "Bursa Saham Pertama di Amsterdam", "Wall Street", "Ekonomi Perilaku", "Teori Dorongan Halus", "Daniel Kahneman dan Teori Prospek", "Psikologi Harga 9,99", "Mengapa Barang Mewah Mahal", "Ekonomi Pekerja Lepas", "Upah Minimum", "Pendapatan Dasar Universal", "Kesenjangan Kaya dan Miskin", "Tangan Tak Terlihat", "Karl Marx dan Kapitalisme", "Kapitalisme Melawan Sosialisme", "Ekonomi Terencana Uni Soviet", "Keajaiban Ekonomi Korea Selatan", "Kebangkitan Ekonomi Tiongkok", "Singapura dari Pelabuhan Kecil Menjadi Pusat Dunia", "Kutukan Sumber Daya Alam", "Penyakit Belanda", "Sanksi Ekonomi", "Perang Dagang dan Tarif", "Nilai Sebuah Merek", "Waralaba", "Startup dan Unicorn", "Ekonomi Berbagi", "Dompet Digital", "Mata Uang Kripto Selain Bitcoin", "Pajak Karbon", "Ekonomi Hijau", "Harga Minyak Negatif 2020", "Krisis Energi 1973", "Hiperinflasi Jerman 1923", "Krisis Keuangan Asia 1997", "Bank Sentral", "Suku Bunga", "Resesi dan Depresi", "Teori Keynes", "Adam Smith dan Kekayaan Bangsa", "Milton Friedman", "Pasar Bull dan Bear", "Short Selling GameStop", "Dana Pensiun", "Daya Beli dan Inflasi", "Nilai Tukar", "IMF dan Bank Dunia", "OPEC", "Perdagangan Bebas", "Rantai Pasok Global", "Pajak Progresif", "Mengapa Negara Menjadi Miskin", "Kapal Kontainer dan Perdagangan Dunia", "Ekonomi Kopi", "Ekonomi Gula dan Perbudakan"], "Biologi": ["Sistem Pernapasan", "Sistem Peredaran Darah", "Sistem Pencernaan", "Sistem Saraf", "Sistem Kekebalan Tubuh", "Sistem Hormon", "Sistem Otot", "Tulang dan Kerangka", "Ginjal", "Hati", "Jantung", "Paru-paru", "Mata dan Penglihatan", "Telinga dan Pendengaran", "Kulit", "Gigi", "Golongan Darah", "Sel Darah Putih", "Indra Penciuman", "Indra Pengecap", "Suhu Tubuh", "Usus dan Mikrobioma", "Perkembangan Janin", "Penuaan", "DNA", "RNA", "Gen dan Kromosom", "Mitokondria", "Fotosintesis", "Pembelahan Sel", "Mutasi Genetik", "CRISPR", "Sel Punca", "Virus", "Bakteri", "Jamur", "Protein dan Enzim", "Antibodi", "Hukum Mendel", "Domba Dolly dan Kloning", "Proyek Genom Manusia", "Metabolisme", "Rantai Makanan", "Terumbu Karang", "Hutan Hujan Tropis", "Simbiosis", "Penyerbukan", "Plankton", "Hutan Bakau", "Seleksi Alam", "Teori Evolusi Darwin", "Asal Mula Mata", "Evolusi Sayap", "Dari Air ke Daratan", "Asal Usul Kehidupan", "Burung Keturunan Dinosaurus", "Evolusi Paus", "Fosil dan Cara Terbentuknya", "Vaksin", "Antibiotik", "Penisilin", "Anestesi", "Transplantasi Organ", "Kanker", "Sinar-X", "Operasi Jantung", "Resistensi Antibiotik", "Epidemi dan Pandemi", "Vitamin", "Kafein", "Sistem Limfatik", "Sistem Reproduksi", "Migrasi Hewan", "Lebah Madu", "Hewan Laut dalam", "Semut dan Koloninya", "Predator Puncak", "Hibernasi", "Kamuflase", "Paus Biru", "Hiu", "Gurita", "Burung Migran", "Kelelawar", "Tardigrada", "Ubur-ubur Abadi", "Gajah", "Kepunahan Hewan", "Singa", "Serigala", "Beruang Kutub", "Harimau", "Komodo", "Ular Berbisa", "Buaya", "Kura-kura Raksasa", "Kupu-kupu Raja", "Laba-laba", "Cumi Raksasa", "Ikan Anglerfish", "Pari Manta", "Burung Kolibri", "Burung Hantu", "Penguin", "Lumba-lumba", "Orca", "Gorila", "Simpanse", "Orangutan", "Rayap", "Kunang-kunang", "Katak Beracun", "Salamander Regeneratif", "Platipus", "Badak", "Jerapah", "Panda Raksasa", "Pandemi Global", "Kepunahan Massal Keenam", "Kepunahan Permian", "Kepunahan Kapur", "Otak Manusia", "Neuron dan Sinapsis", "Hormon Kortisol", "Dopamin", "Ritme Sirkadian", "Rasa Sakit", "Telomer dan Penuaan", "Epigenetika", "Alergi", "Penyakit Autoimun", "Malaria", "Tuberkulosis", "Pemusnahan Cacar", "Polio", "Rabies", "Demam Berdarah dan Nyamuk", "Parasit yang Mengendalikan Inang", "Jamur Zombie Cordyceps", "Tumbuhan Pemakan Serangga", "Pohon Raksasa Sekuoia", "Rafflesia Bunga Terbesar", "Bunga Bangkai", "Jaringan Jamur di Bawah Hutan", "Bioluminesensi", "Gerakan Tumbuhan", "Axolotl", "Kuda Laut", "Belut Listrik", "Hiu Paus", "Burung Cenderawasih", "Burung Kiwi", "Kecerdasan Burung Gagak", "Bahasa Lumba-lumba", "Cheetah", "Macan Tutul dan Jaguar", "Domestikasi Anjing", "Domestikasi Kucing", "Domestikasi Kuda", "Tyrannosaurus Rex", "DNA dan Heliks Ganda", "Kloning Domba Dolly", "Sistem Imun", "Vaksin MRNA", "Antibiotik dan Resistensi", "Probiotik", "Jantung Manusia", "Mata Manusia", "Tulang dan Sendi", "Evolusi Mata", "Seleksi Alam Darwin", "Fosil Lucy", "Metamorfosis Kupu-kupu", "Lebah dan Tarian Penunjuk Arah", "Semut dan Koloni", "Laba-laba dan Jaring", "Gurita Cerdas", "Panda", "Koala dan Kanguru", "Gajah dan Ingatannya", "Serigala dan Kawanan", "Kelelawar dan Ekolokasi", "Burung Migrasi", "Penyu Laut", "Terumbu Karang Hidup", "Kelelawar Buah dan Penyebaran Biji", "Kupu-kupu Monarch dan Migrasinya", "Salmon Kembali ke Sungai Asal", "Wabah Belalang", "Cangkang Siput", "Katak Panah Beracun", "Lidah Cepat Bunglon"], "Astronomi": ["Matahari", "Merkurius", "Venus", "Bumi Sebagai Planet", "Bulan", "Mars", "Jupiter", "Saturnus", "Cincin Saturnus", "Uranus", "Neptunus", "Pluto", "Sabuk Asteroid", "Sabuk Kuiper", "Awan Oort", "Komet", "Komet Halley", "Meteor dan Hujan Meteor", "Asteroid", "Gerhana Matahari", "Gerhana Bulan", "Aurora", "Fase Bulan", "Pasang Surut Laut", "Kelahiran Bintang", "Kematian Bintang", "Supernova", "Bintang Neutron", "Pulsar", "Magnetar", "Katai Putih", "Katai Merah", "Raksasa Merah", "Lubang Hitam", "Lubang Hitam Supermasif", "Sagitarius A", "Cakrawala Peristiwa", "Lubang Cacing", "Nebula", "Nebula Orion", "Pilar Penciptaan", "Rasi Bintang", "Tahun Cahaya", "Galaksi", "Bima Sakti", "Galaksi Andromeda", "Tabrakan Galaksi", "Kuasar", "Gugus Galaksi", "Filamen Kosmik", "Big Bang", "Alam Semesta Mengembang", "Radiasi Latar Kosmik", "Materi Gelap", "Energi Gelap", "Nasib Akhir Alam Semesta", "Eksoplanet", "Zona Layak Huni", "Proxima Centauri", "TRAPPIST-1", "Europa", "Enceladus", "Titan", "Paradoks Fermi", "Persamaan Drake", "Pencarian Kehidupan Cerdas SETI", "Misi Venera ke Venus", "Pendaratan Manusia di Bulan", "Apollo 13", "Sputnik", "Yuri Gagarin", "Voyager", "Teleskop Hubble", "Teleskop James Webb", "Stasiun Luar Angkasa", "Penjelajah Mars", "Misi New Horizons", "Misi Cassini", "Parker Solar Probe", "Sampah Antariksa", "Tumbukan Asteroid", "Badai Matahari", "Matahari Menjadi Raksasa Merah", "Tabrakan Bumi dan Andromeda", "Radiasi Latar Kosmik Tak Sengaja", "Pulsar Pertama Jocelyn Bell", "Penyebab Aurora Borealis dan Australis", "Akhir Alam Semesta Big Crunch dan Big Rip", "Kiamat Matahari", "Akhir Hidup Bumi", "Multiverse", "Prinsip Antropik", "Inflasi Kosmik", "Gelombang Gravitasi", "Foto Pertama Lubang Hitam", "Radiasi Hawking", "Betelgeuse", "Bintang Terbesar yang Diketahui", "Bintang Terdekat dari Matahari", "Bintang Ganda", "Bintang Cepheid", "Planet Terpanas", "Planet Tanpa Bintang", "Io dan Gunung Berapinya", "Ganymede", "Callisto", "Triton", "Charon", "Planet Kesembilan", "Ceres Planet Katai", "Eris", "Olympus Mons", "Valles Marineris", "Bintik Merah Besar Jupiter", "Heksagon Saturnus", "Atmosfer Venus", "Corona Matahari", "Bintik Matahari", "Siklus Matahari", "Angin Surya", "Sabuk van Allen", "Mengapa Bulan Selalu Menghadap Kita", "Supermoon", "Bulan Biru", "Kelahiran Tata Surya", "Tabrakan Theia dan Bumi", "Asal Air di Bumi", "Terraforming Mars", "Misi Artemis", "Laika", "Teori Big Bang", "Quasar", "Planet di Luar Tata Surya", "Proxima Centauri B", "Voyager 1 dan 2", "Pesan di Pioneer", "Stasiun Luar Angkasa Internasional", "Sejarah Pluto", "Hujan Meteor", "Navigasi dengan Bintang", "Uranus Planet Miring", "Matahari dan Intinya", "Nebula Kepiting", "Bintang Katai Putih", "Gugus Bola", "Kosmos dan Skala Jarak", "Europa dan Samudra Tersembunyi", "Enceladus dan Geyser Esnya", "Titan dan Danau Metana", "Planet Kerdil Haumea", "Asteroid Vesta", "Asteroid Bennu", "Komet 67P", "Tabrakan Dua Galaksi", "Galaksi Spiral dan Elips", "Gugus Galaksi Virgo", "Radiasi Latar Gelombang Mikro", "Asal Unsur di Alam Semesta", "Kelahiran Bintang di Nebula", "Nebula Planeter", "Bintang Wolf-Rayet", "Cincin Einstein"], "Geografi": ["Lempeng Tektonik", "Cincin Api Pasifik", "Gunung Berapi", "Medan Magnet Bumi", "Samudra Pasifik", "Palung Mariana", "Sungai Nil", "Sungai Amazon", "Gurun Sahara", "Gurun Gobi", "Antartika", "Kutub Utara", "Gletser", "Pegunungan Himalaya", "Gunung Everest", "Pegunungan Andes", "Pegunungan Alpen", "Danau Baikal", "Danau Toba", "Laut Mati", "Kepulauan Galapagos", "Great Barrier Reef", "Grand Canyon", "Air Terjun Victoria", "Gua dan Sistem Karst", "Delta Sungai", "Pulau Vulkanik", "Lembah Rift Afrika", "Iklim dan Cuaca", "El Nino dan La Nina", "Monsun", "Petir", "Efek Rumah Kaca", "Lapisan Ozon", "Pemanasan Global", "Kenaikan Permukaan Laut", "Hujan Asam", "Awan dan Hujan", "Angin dan Arus Jet", "Lapisan Atmosfer", "Pangea", "Zaman Es", "Zaman Dinosaurus", "Ledakan Kambrium", "Bumi Bola Salju", "Lahirnya Bulan", "Atmosfer Awal Bumi", "Peta dan Pembuatan Peta", "Garis Lintang dan Bujur", "Benua dan Pergeserannya", "Hutan dan Deforestasi", "Tanah dan Pembentukannya", "Pulau Buatan", "Mata Air Panas dan Geyser", "Gua Es", "Samudra Atlantik", "Sungai Gangga", "Gurun Atacama", "Pulau Greenland", "Hutan Taiga", "Savana Afrika", "Fjord Norwegia", "Atol dan Pulau Karang", "Gua Terdalam di Dunia", "Penjelajahan Amazon", "Penjelajahan Sahara", "Penjelajahan Gurun Arab", "Supervolcano Yellowstone", "Letusan Tambora", "Letusan Krakatau 1883", "Gempa Bumi", "Tsunami 2004", "Banjir Besar", "Kekeringan", "Tornado", "Badai Tropis", "Perubahan Iklim Ekstrem", "Pembalikan Kutub Magnet", "Zaman Es Berikutnya", "Gempa Lisbon 1755", "Badai Katrina", "Banjir Besar Belanda 1953", "Dust Bowl", "Gempa San Francisco 1906", "Letusan Pinatubo", "Tsunami Jepang 2011", "Gunung Fuji", "Gunung Kilimanjaro", "Gunung Vesuvius", "Gunung Merapi", "Lembah Kematian", "Selat Bosphorus", "Selat Malaka", "Laut Aral yang Mengering", "Danau Titicaca", "Danau Victoria", "Sungai Mississippi", "Sungai Yangtze", "Sungai Mekong", "Sungai Rhine dan Danube", "Sungai Kongo", "Air Terjun Niagara", "Air Terjun Angel", "Kepulauan Hawaii", "Kepulauan Maladewa", "Islandia Pulau Es dan Api", "Madagaskar", "Selandia Baru", "Australia Benua Tertua", "Outback Australia", "Siberia", "Alaska", "Patagonia", "Kepulauan Falkland", "Karibia", "Laut Mediterania", "Laut Hitam", "Laut Merah", "Perbedaan Arktik dan Antartika", "Perjanjian Antartika", "Danau Vostok", "Gunung Es", "Permafrost", "Samudra Hindia", "Samudra Arktik", "Arus Teluk Gulf Stream", "Sirkulasi Laut dalam", "Ventilasi Hidrotermal", "Inti Bumi", "Lapisan Mantel Bumi", "Taiga", "Dataran Tinggi Tibet", "Lembah Retakan Afrika", "Sesar San Andreas", "Pangaea", "Raja Ampat", "Selat Hormuz", "Kutub Selatan", "Proyeksi Peta Mercator", "Zona Iklim", "Pulau Panas Perkotaan", "Fjord", "Atol", "Stalaktit dan Stalagmit", "Danau Terbesar di Dunia", "Danau Garda", "Selat Bering", "Selat Magellan", "Tanjung Harapan", "Cekungan Kongo", "Dataran Tinggi Deccan", "Sungai Indus", "Sungai Volga", "Kepulauan Svalbard", "Kepulauan Faroe", "Dataran Pampas", "Padang Rumput Stepa", "Lahan Basah Pantanal"], "Sains": ["Gravitasi", "Teori Relativitas Khusus", "Relativitas Umum", "Mekanika Kuantum", "Sifat Cahaya", "Gelombang", "Bunyi dan Suara", "Listrik", "Magnet", "Atom", "Partikel Dasar", "Higgs Boson", "Antimateri", "Entropi", "Termodinamika", "Superkonduktor", "Laser", "Fusi Nuklir", "Fisi Nuklir", "Radioaktivitas", "Efek Doppler", "Efek Fotolistrik", "Teori String", "Waktu dan Ruang-waktu", "Kecepatan Cahaya", "Nol Mutlak", "Tabel Periodik", "Karbon", "Baterai", "Plastik", "Baja", "Gas Mulia", "Asam dan Basa", "Katalis", "Emas", "Hidrogen", "Oksigen", "Kaca", "Karat dan Korosi", "Bilangan Nol", "Bilangan Prima", "Bilangan Pi", "Probabilitas", "Algoritma", "Paradoks Matematika", "Geometri Euclid", "Teori Permainan", "Deret Fibonacci", "Rasio Emas", "Konsep Tak Hingga", "Teorema Pythagoras", "Teori Kekacauan", "Eksperimen Milgram", "Eksperimen Pavlov", "Eksperimen Penjara Stanford", "Kucing Schrodinger", "Percobaan Celah Ganda", "Percobaan Rutherford", "Percobaan Michelson-Morley", "Percobaan Miller-Urey", "Eksperimen Galileo", "Eksperimen Marshmallow", "Eksperimen Asch", "Eksperimen Gorila Tak Terlihat", "Percobaan Pendulum Foucault", "Percobaan Cavendish", "Spektrum Elektromagnetik", "Hukum Gerak Newton", "Medan Listrik dan Magnet", "Memori", "Tidur", "Mimpi", "Bias Kognitif", "Emosi", "Cara Kita Belajar", "Ilusi Optik", "Rasa Takut", "Pembentukan Kebiasaan", "Stres", "Perhatian dan Fokus", "Efek Placebo", "Disonansi Kognitif", "Efek Dunning-Kruger", "Konformitas Sosial", "Ingatan Palsu", "Bahasa Tubuh", "Kecerdasan Emosional", "Kepribadian", "Motivasi", "Prokrastinasi", "Kecanduan Ponsel", "Multitasking", "Intuisi", "Kebahagiaan", "Kreativitas", "Persepsi Waktu", "Efek Halo", "Empati", "Takut Berbicara di Depan Umum", "Penisilin Alexander Fleming", "Oven Microwave", "Kertas Post-it", "Sinar-X Rontgen", "Radioaktivitas Becquerel", "Teflon", "Velcro", "Sakarin", "Kue Chocolate Chip", "Pewarna Mauve William Perkin", "Vulkanisasi Karet", "Katak Galvani", "Kaca Pengaman", "Legenda Penemuan Kopi", "Es Krim Cone", "Keripik Kentang", "Super Glue", "Aspartam", "Pelangi dan Prisma", "Dilatasi Waktu", "Paradoks Kembar", "Keterikatan Kuantum", "Prinsip Ketidakpastian Heisenberg", "Persamaan E=mc2", "Model Atom Bohr", "Model Standar Fisika Partikel", "Large Hadron Collider", "Neutrino", "Struktur Air dan Es yang Mengapung", "Polimer", "Grafen", "Kimia Memasak", "Reaksi Maillard", "Fermentasi", "Alkimia", "Unsur Terberat", "Penemuan Unsur Baru", "Logam Cair Merkuri", "Teorema Terakhir Fermat", "Hipotesis Riemann", "Bilangan Imajiner", "Bilangan Euler", "Paradoks Monty Hall", "Paradoks Ulang Tahun", "Fraktal", "Segitiga Pascal", "Teorema Bayes", "Statistik dan Cara Berbohong dengan Data", "Teori Pikiran", "Efek Bystander", "Hierarki Kebutuhan Maslow", "Relativitas Khusus", "Hukum Gravitasi Newton", "Hukum Termodinamika", "Elektromagnetisme", "Listrik Statis", "Cahaya dan Warna", "Ikatan Kimia", "Gelombang Suara", "Resonansi", "Angka Pi", "Barisan Fibonacci", "Geometri Non-Euklides", "Kalkulus", "Metode Ilmiah", "Pseudosains", "Efek Plasebo", "Memori Manusia", "Emosi dan Otak", "Kecerdasan", "Kebiasaan dan Disiplin", "Dilema Tahanan", "Pendulum Foucault", "Eksperimen Celah Ganda", "Efek Casimir", "Plasma Keadaan Materi", "Kondensat Bose-Einstein", "Efek Kupu-kupu dan Teori Kekacauan", "Teorema Ketidaklengkapan Godel"], "Teknologi": ["Internet", "World Wide Web", "GPS", "Kecerdasan Buatan", "Chip Komputer", "Transistor", "Kriptografi", "Roket", "Pencetakan 3D", "Serat Optik", "Ponsel Pintar", "Baterai Litium", "Mobil Listrik", "Pesawat Jet", "Kereta Cepat", "Kapal Selam", "Radar", "Radio", "Televisi", "Telepon", "Lampu Pijar Edison", "Mesin Uap", "Mesin Cetak Gutenberg", "Roda", "Kompas", "Pesawat Wright Bersaudara", "Mesin Enigma", "Sejarah Komputer", "Bahasa Pemrograman", "Kamera", "Mikroskop", "Teleskop Pertama", "Kabel Bawah Laut", "Satelit Komunikasi", "Drone", "Robot Industri", "Mobil Otonom", "Blockchain", "Panel Surya", "Turbin Angin", "Pembangkit Nuklir", "Menara Eiffel", "Terusan Suez", "Terusan Panama", "Bendungan Hoover", "Jembatan Golden Gate", "Pencakar Langit", "Burj Khalifa", "Terowongan Channel", "Akuaduk Romawi", "Jembatan Gantung", "Kereta Bawah Tanah", "Pelabuhan Kontainer", "Bandar Udara", "Pembangkit Listrik Tenaga Air", "Gedung dan Gempa", "Sejarah Telepon Seluler", "Komputasi Kuantum", "Media Penyimpanan Data", "Pusat Data dan Cloud", "Keamanan Siber", "Enkripsi Pesan", "Mesin Pencari", "Sistem Operasi", "Realitas Virtual", "Koloni Manusia di Mars", "Elevator Antariksa", "Fusi Nuklir Sebagai Energi Masa Depan", "Mobil Terbang", "Hyperloop", "Antarmuka Otak-komputer", "Kecerdasan Buatan Umum", "Kota Pintar", "Pertanian Vertikal", "Daging Hasil Laboratorium", "Memperpanjang Usia Manusia", "Robot Humanoid", "Realitas Tertambah", "Metaverse", "Energi Hidrogen", "Penambangan Asteroid", "Layar Surya Antariksa", "Pencetakan Organ Tubuh", "Nanoteknologi", "Internet Satelit", "Kulkas", "Microwave", "Mesin Cuci", "Pendingin Ruangan", "Pesawat Terbang", "Lift", "Kunci dan Gembok", "Baterai Ponsel", "Layar Sentuh", "Kamera Ponsel", "Peta Digital", "Wi-Fi", "Bluetooth", "Mesin ATM", "Kartu Chip", "Barcode", "QR Code", "Lampu LED", "Kertas", "Ban Mobil", "Rem Mobil", "Mesin Mobil Bensin", "Mesin Jet Pesawat", "Pembangkit Listrik", "Toilet Modern", "Sistem Air Bersih", "Mesin Kopi Espresso", "Sejarah Video Game", "Pong", "Krisis Game 1983", "Nintendo", "Super Mario", "Tetris", "Pac-Man", "Konsol PlayStation", "Deep Blue Melawan Kasparov", "AlphaGo", "Dungeons and Dragons", "Desain Level Game", "Game Indie", "Esports", "Loot Box dan Gacha", "Minecraft", "Grafis 3D dalam Game", "Arcade", "Speedrun", "Model Bahasa Besar", "Jaringan Saraf Tiruan", "Pembelajaran Mesin", "Pengenalan Wajah", "Deepfake", "Algoritma Media Sosial", "Sejarah Media Sosial", "Sejarah Google", "Sejarah Apple", "Sejarah Microsoft", "Sejarah Linux", "Perangkat Lunak Sumber Terbuka", "Sejarah Email", "Bug Komputer Pertama", "Masalah Y2K", "Perang Browser", "Sejarah Emoji", "Sistem Nama Domain", "Jaringan 5G", "Hukum Moore", "Superkomputer", "ENIAC Komputer Pertama", "Sejarah Kalkulator", "Sejarah Jam", "Sejarah Kacamata", "Perang Arus Edison dan Tesla", "Kabel Telegraf Transatlantik", "Telegraf", "Pesawat Concorde", "Pesawat Terbesar di Dunia", "Kapal Induk", "Pesawat Siluman", "Satelit Pengamat Bumi", "Prostetik dan Anggota Tubuh Bionik", "Pemindai MRI", "Bedah Robotik", "Cara Chip Dibuat", "Kelangkaan Chip Semikonduktor", "Sejarah Sepeda", "ARPANET dan Awal Internet", "Komputasi Awan", "Teknologi Blockchain", "Sejarah Kecerdasan Buatan", "Baterai Lithium", "Reaktor Nuklir", "Hidrogen Hijau", "Printer 3D", "Ponsel Pertama", "Sejarah IPhone", "Kamera Digital", "Awal Fotografi", "Film Bisu ke Film Suara", "Animasi Komputer", "Pesawat Supersonik", "Roket yang Bisa Dipakai Ulang", "Enkripsi", "Kode Morse", "Internet untuk Segala Hal", "Pertanian Presisi", "Bioteknologi", "Pencetakan Organ", "Sejarah Mesin Cetak", "Lampu Pijar", "Mesin Faks", "Pencakar Langit Pertama", "Jam Atom", "Satelit Komunikasi Pertama"], "Misteri": ["Jack the Ripper", "Zodiac Killer", "Black Dahlia", "Lizzie Borden", "Pangeran di Menara", "Anastasia Romanov", "Kematian Alexander Agung", "Kematian Napoleon", "Kematian Mozart", "Rasputin", "Kematian Edgar Allan Poe", "Penculikan Bayi Lindbergh", "D. B. Cooper", "Kasus Dyatlov Pass", "Kasus Tamam Shud", "Amelia Earhart", "Kapal Mary Celeste", "Penerbangan MH370", "Segitiga Bermuda", "Atlantis", "Koloni Roanoke", "Patung Moai Pulau Paskah", "Stonehenge", "Gobekli Tepe", "Garis Nazca", "Naskah Voynich", "Mekanisme Antikythera", "Kota Hilang El Dorado", "Kutukan Firaun", "Ledakan Tunguska", "Peristiwa Roswell", "Sinyal Wow", "Monster Loch Ness", "Yeti", "Bigfoot", "Hilangnya Bangsa Maya", "Kerajaan Prester John", "Kapal Hantu", "Kematian Cleopatra", "Raja Arthur Sungguhan", "Kebakaran Perpustakaan Alexandria", "Harta Karun Templar", "Kuburan Genghis Khan", "Kematian Tutankhamun", "Kematian Kaisar Caligula", "Wabah Menari 1518", "Rumah Winchester", "Bangsa Hittite yang Hilang", "Pulau Oak", "Pria Bertopeng Besi", "Penyihir Salem", "Penerbangan 19 Angkatan Laut", "Siapa Shakespeare Sebenarnya", "Kasus Boston Strangler", "Legiun Kesembilan yang Hilang", "Louis XVII yang Menghilang", "Mohenjo-daro yang Ditinggalkan", "Minotaur dan Labirin", "Burung Phoenix", "Naga dalam Berbagai Budaya", "Kraken", "Centaur", "Sphinx", "Putri Duyung", "Pencurian Mona Lisa", "Pembunuhan Presiden Kennedy", "Pembunuhan Abraham Lincoln", "Lingkaran Misterius di Ladang", "Area 51", "Tengkorak Kristal", "Kota Bawah Tanah Derinkuyu", "Kota Hilang Z Percy Fawcett", "Hilangnya Penjaga Mercusuar Flannan", "Bola Batu Kosta Rika", "Pulau Poveglia", "Peti Perjanjian yang Hilang", "Cawan Suci", "Kain Kafan Turin", "Kereta Emas Nazi", "Ruang Amber yang Hilang", "Harta Karun Raja John", "Kutukan Berlian Hope", "Kapal Hantu Flying Dutchman", "Cahaya Hessdalen", "Cahaya Marfa", "Dengung Taos", "Suara Bloop dari Laut", "Pembunuhan Tsar Nicholas II", "Kematian Alexander Pushkin", "Peracunan Napoleon", "Kasus Racun Tylenol Chicago", "Unabomber", "Pencurian Seni Museum Gardner", "Buku Harian Hitler Palsu", "Pemalsuan Fosil Piltdown", "Raksasa Cardiff", "Saudara Fox dan Spiritisme", "Pulau Roanoke", "Misteri Kematian Bruce Lee", "Misteri Kematian Marilyn Monroe", "Kematian Misterius Howard Hughes", "Misteri Hilangnya Jimmy Hoffa", "Kapal Octavius", "Misteri Kuburan Alexander Agung", "Misteri Piramida Giza", "Moai Pulau Paskah", "Pembunuh Zodiak", "Insiden Dyatlov Pass", "Chupacabra", "Mothman", "Misteri Anastasia Romanov", "Misteri Raja Richard III", "Eldorado Kota Emas", "Baterai Baghdad", "Insiden Roswell", "Misteri Pulau Oak", "Harta Karun Kapal Karam", "Kota Hilang Atlantis", "Lemuria dan Mu", "Hantu Tower of London", "Lagu Misterius Gloomy Sunday", "Misteri Pesawat Penerbangan 19", "Misteri Kerangka di Danau Roopkund", "Misteri Kaisar Pertama Tiongkok dan Makamnya", "Misteri Penerbangan Amelia Earhart", "Kota Terkubur Helike", "Manusia Rawa Tollund"]};
+  const GROUPS = Object.keys(TOPICS);
+  const DURS = [2,4,6,8,10], PREPS = [0,5,10,15];
+  const EMOJI = {'Sejarah':'\u{1F3DB}️','Tokoh':'\u{1F464}','Penjelajahan':'\u{1F9ED}','Fakta Dunia':'\u{1F30E}','Ekonomi':'\u{1F4B0}','Mitologi':'\u{1F409}',
+    'Biologi':'\u{1F9EC}','Hewan':'\u{1F418}','Astronomi':'\u{1FA90}','Geografi':'\u{1F5FA}️','Bencana':'\u{1F30B}','Sains':'⚗️',
+    'Teknologi':'\u{1F4A1}','Cara Kerja':'⚙️','Game':'\u{1F3AE}','Psikologi':'\u{1F9E0}','Misteri':'\u{1F50D}',
+    'Mitos dan Fakta':'\u{1F9D0}','Bertahan Hidup':'\u{1F3D4}️','Kebetulan':'\u{1F340}'};
+  const SECTIONS = [
+    { n:'Sains dan Alam', g:['Biologi','Astronomi','Geografi','Sains'] },
+    { n:'Sejarah dan Dunia', g:['Sejarah','Tokoh','Fakta Dunia','Ekonomi'] },
+    { n:'Teknologi dan Misteri', g:['Teknologi','Misteri'] }
+  ];
+  (function fixSections(){
+    const seen = new Set();
+    SECTIONS.forEach(s => { s.g = s.g.filter(g => TOPICS[g]); s.g.forEach(g => seen.add(g)); });
+    const rest = GROUPS.filter(g => !seen.has(g));
+    if(rest.length) SECTIONS.push({ n:'Lainnya', g:rest });
+  })();
+  const em = g => (EMOJI[g] ? EMOJI[g] + ' ' : '');
+
+  const $ = s => document.querySelector(s);
+  const $$ = s => [...document.querySelectorAll(s)];
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const pick = a => a[Math.floor(Math.random()*a.length)];
+  const pad = n => String(n).padStart(2,'0');
+  const fmt = s => { s = Math.max(0, Math.round(s)); return Math.floor(s/60) + ':' + pad(s%60); };
+  const reduceMotion = () => !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function showStoreWarn(){ const w = document.getElementById('store-warn'); if(w) w.hidden = false; }
+  function load(k, def){
+    let raw = null;
+    try{ raw = localStorage.getItem(k); }catch(e){ showStoreWarn(); return def; }
+    if(!raw) return def;
+    try{ return JSON.parse(raw); }
+    catch(e){ try{ localStorage.setItem(k + '-rusak', raw); }catch(_){} return def; }
+  }
+  function save(k, v){
+    try{ localStorage.setItem(k, JSON.stringify(v)); return true; }
+    catch(e){ showStoreWarn(); return false; }
+  }
+  function checkStore(){ try{ localStorage.setItem('mt-tes', '1'); localStorage.removeItem('mt-tes'); }catch(e){ showStoreWarn(); } }
+  function askPersist(){ try{ if(navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(function(){}); }catch(e){} }
+  checkStore();
+  function el(tag, cls, text){ const e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
+  function dayKey(d){ d = d || new Date(); return d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate()); }
+
+  /* ---------- pengaturan ---------- */
+  const root = document.documentElement;
+  const hostTheme = root.getAttribute('data-theme');
+  const ACCENTS = {
+    merah:  { n:'Merah',  l:['#C93A26','#FFFFFF'], d:['#FF6B52','#1A0804'] },
+    ungu:   { n:'Ungu',   l:['#6D3FD0','#FFFFFF'], d:['#A98BFF','#140A2E'] },
+    oranye: { n:'Oranye', l:['#E8590C','#1A0A00'], d:['#FF8A3D','#1A0A00'] },
+    biru:   { n:'Biru',   l:['#1F5FD6','#FFFFFF'], d:['#6AA6FF','#06142E'] },
+    hijau:  { n:'Hijau',  l:['#1B7F4B','#FFFFFF'], d:['#4FD18B','#04170D'] },
+    pink:   { n:'Pink',   l:['#C2185B','#FFFFFF'], d:['#FF7AB6','#2A0615'] }
+  };
+  const THEMES = [['otomatis','Otomatis'],['terang','Terang'],['gelap','Gelap']];
+  const cfg = Object.assign({ volume:75, style:'Klasik', theme:'otomatis', accent:'merah', warn:true }, load('mt-settings', {}));
+  const mq = window.matchMedia ? matchMedia('(prefers-color-scheme: dark)') : null;
+  function isDark(){ const a = root.getAttribute('data-theme'); if(a === 'dark') return true; if(a === 'light') return false; return !!(mq && mq.matches); }
+  function rgba(hex, a){ const n = parseInt(hex.slice(1), 16); return 'rgba(' + (n>>16) + ',' + ((n>>8)&255) + ',' + (n&255) + ',' + a + ')'; }
+  function applyAccent(){
+    const A = ACCENTS[cfg.accent] || ACCENTS.merah, pair = isDark() ? A.d : A.l;
+    root.style.setProperty('--accent', pair[0]); root.style.setProperty('--accent-ink', pair[1]);
+    root.style.setProperty('--stage-accent', pair[0]); root.style.setProperty('--glow', rgba(pair[0], isDark() ? .14 : .13));
+    $$('.sw').forEach(b => { const a = ACCENTS[b.dataset.acc]; b.style.background = isDark() ? a.d[0] : a.l[0]; });
+    try{
+      const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="' + A.l[0] + '"/><path d="M16 46V19l16 17 16-17v27" fill="none" stroke="' + A.l[1] + '" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      let lk = document.querySelector('link[rel="icon"]'); if(!lk){ lk = document.createElement('link'); lk.rel = 'icon'; document.head.appendChild(lk); }
+      lk.href = 'data:image/svg+xml,' + encodeURIComponent(svg);
+    }catch(e){}
+  }
+  function applyMode(){
+    if(cfg.theme === 'terang') root.setAttribute('data-theme', 'light');
+    else if(cfg.theme === 'gelap') root.setAttribute('data-theme', 'dark');
+    else if(hostTheme) root.setAttribute('data-theme', hostTheme);
+    else root.removeAttribute('data-theme');
+    applyAccent();
+  }
+  if(mq && mq.addEventListener) mq.addEventListener('change', applyAccent);
+  try{ new MutationObserver(applyAccent).observe(root, { attributes:true, attributeFilter:['data-theme'] }); }catch(e){}
+  const persistCfg = () => save('mt-settings', cfg);
+
+  /* ---------- suara (dibuat oleh browser) ---------- */
+  let actx = null;
+  function initAudio(){ try{ if(!actx){ const C = window.AudioContext || window.webkitAudioContext; if(C) actx = new C(); } if(actx && actx.state === 'suspended') actx.resume(); }catch(e){} }
+  function tone(freq, dur, o){
+    if(!actx) return;
+    o = o || {};
+    const master = Math.pow(Math.max(0, Math.min(100, cfg.volume)) / 100, 1.3) * 1.4;
+    const vol = (o.vol || .15) * master;
+    if(vol < .0004) return;
+    try{
+      const t = actx.currentTime + (o.when || 0);
+      const osc = actx.createOscillator(), g = actx.createGain();
+      osc.type = o.type || 'sine'; osc.frequency.value = freq;
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(vol, t + 0.008);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      osc.connect(g); g.connect(actx.destination); osc.start(t); osc.stop(t + dur + 0.03);
+    }catch(e){}
+  }
+  const STYLES = {
+    Klasik:{
+      click(){ tone(880,.07,{type:'triangle',vol:.24}); },
+      tick(k){ tone(480+(k%7)*70,.035,{type:'square',vol:.05}); },
+      tickSlow(k){ tone(700+(k%5)*90,.1,{type:'triangle',vol:.13}); },
+      land(){ [523,659,784,1047].forEach((f,i) => tone(f,.3,{vol:.16,when:i*.09})); },
+      count(){ tone(1000,.05,{type:'triangle',vol:.1}); },
+      warn(){ tone(440,.12,{type:'sawtooth',vol:.07}); tone(440,.12,{type:'sawtooth',vol:.07,when:.18}); },
+      start(){ tone(660,.2,{vol:.16}); },
+      end(){ tone(523,.16,{vol:.16}); tone(784,.28,{vol:.16,when:.2}); }
+    },
+    Arcade:{
+      click(){ tone(1320,.05,{type:'square',vol:.12}); },
+      tick(k){ tone(300+(k%8)*60,.03,{type:'square',vol:.07}); },
+      tickSlow(k){ tone(520+(k%5)*110,.07,{type:'square',vol:.1}); },
+      land(){ [392,523,659,784,1047].forEach((f,i) => tone(f,.12,{type:'square',vol:.1,when:i*.07})); },
+      count(){ tone(880,.05,{type:'square',vol:.08}); },
+      warn(){ tone(220,.15,{type:'square',vol:.09}); tone(180,.2,{type:'square',vol:.09,when:.16}); },
+      start(){ tone(523,.08,{type:'square',vol:.1}); tone(784,.14,{type:'square',vol:.1,when:.09}); },
+      end(){ [784,659,523].forEach((f,i) => tone(f,.1,{type:'square',vol:.1,when:i*.09})); }
+    },
+    Lembut:{
+      click(){ tone(520,.09,{vol:.2}); },
+      tick(k){ tone(330+(k%5)*25,.05,{vol:.07}); },
+      tickSlow(k){ tone(440+(k%4)*40,.14,{vol:.1}); },
+      land(){ [392,494,587].forEach((f,i) => tone(f,.5,{vol:.12,when:i*.12})); },
+      count(){ tone(660,.08,{vol:.08}); },
+      warn(){ tone(330,.25,{vol:.1}); tone(330,.25,{vol:.1,when:.3}); },
+      start(){ tone(440,.35,{vol:.12}); },
+      end(){ tone(587,.3,{vol:.12}); tone(440,.5,{vol:.12,when:.25}); }
+    },
+    Kasino:{
+      click(){ tone(1500,.04,{type:'triangle',vol:.18}); tone(2000,.06,{type:'triangle',vol:.14,when:.04}); },
+      tick(k){ tone(900+(k%3)*150,.025,{type:'square',vol:.06}); },
+      tickSlow(k){ tone(1100+(k%3)*200,.06,{type:'triangle',vol:.14}); },
+      land(){ [784,988,1175,1568,1175,1568,1976].forEach((f,i) => tone(f,.16,{type:'triangle',vol:.14,when:i*.08})); },
+      count(){ tone(1200,.04,{type:'triangle',vol:.1}); },
+      warn(){ tone(500,.1,{type:'sawtooth',vol:.08}); tone(400,.18,{type:'sawtooth',vol:.08,when:.12}); },
+      start(){ tone(988,.12,{type:'triangle',vol:.14}); tone(1319,.2,{type:'triangle',vol:.14,when:.1}); },
+      end(){ [1319,1047,784].forEach((f,i) => tone(f,.14,{type:'triangle',vol:.14,when:i*.1})); }
+    }
+  };
+  if(!STYLES[cfg.style]) cfg.style = 'Klasik';
+  if(!ACCENTS[cfg.accent]) cfg.accent = 'merah';
+  if(!THEMES.some(t => t[0] === cfg.theme)) cfg.theme = 'otomatis';
+  cfg.volume = Math.max(0, Math.min(100, Number(cfg.volume) || 0));
+  const sfx = {};
+  ['click','tick','tickSlow','land','count','warn','start','end'].forEach(n => {
+    sfx[n] = function(){ try{ (STYLES[cfg.style] || STYLES.Klasik)[n].apply(null, arguments); }catch(e){} };
+  });
+  document.addEventListener('click', e => {
+    const b = e.target && e.target.closest ? e.target.closest('button, summary') : null;
+    if(!b || b.disabled) return;
+    initAudio(); sfx.click();
+  }, true);
+  document.addEventListener('change', e => {
+    if(e.target && (e.target.type === 'checkbox' || e.target.type === 'range')){ initAudio(); sfx.click(); }
+  }, true);
+
+  /* ---------- data tersimpan ---------- */
+  const pref = Object.assign({ dur:4, prep:0, groups:null }, load('mt-prefs', {}));
+  if(!DURS.includes(pref.dur)) pref.dur = 4;
+  if(!PREPS.includes(pref.prep)) pref.prep = 0;
+  const sel = new Set((Array.isArray(pref.groups) ? pref.groups : GROUPS).filter(g => TOPICS[g]));
+  const persistPref = () => save('mt-prefs', { dur:pref.dur, prep:pref.prep, groups:[...sel] });
+  function cleanStats(s){
+    s = Object.assign({ sessions:0, seconds:0, days:[], byGroup:{}, daily:{} }, (s && typeof s === 'object') ? s : {});
+    s.sessions = Math.max(0, Number(s.sessions) || 0); s.seconds = Math.max(0, Number(s.seconds) || 0);
+    s.days = Array.isArray(s.days) ? s.days.filter(x => typeof x === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(x)).slice(-1500) : [];
+    if(!s.byGroup || typeof s.byGroup !== 'object' || Array.isArray(s.byGroup)) s.byGroup = {};
+    if(!s.daily || typeof s.daily !== 'object' || Array.isArray(s.daily)) s.daily = {};
+    return s;
+  }
+  function cleanHist(h){ return (Array.isArray(h) ? h : []).filter(x => x && typeof x.t === 'string' && typeof x.g === 'string').slice(0, 200); }
+  function cleanNotes(n){ const o = {}; if(n && typeof n === 'object' && !Array.isArray(n)) Object.keys(n).forEach(k => { if(typeof n[k] === 'string') o[k] = n[k]; }); return o; }
+  let stats = cleanStats(load('mt-stats', {}));
+  let hist = cleanHist(load('mt-history', []));
+  let favs = new Set((Array.isArray(load('mt-fav', [])) ? load('mt-fav', []) : []).filter(x => typeof x === 'string'));
+  let notes = cleanNotes(load('mt-notes', {}));
+  function noteGet(t){ return notes[t] || ''; }
+  function noteSet(t, v){
+    if(!t) return;
+    if(v) { delete notes[t]; notes[t] = v; } else delete notes[t];
+    const keys = Object.keys(notes); while(keys.length > 150){ delete notes[keys.shift()]; }
+    save('mt-notes', notes);
+  }
+  function streak(){
+    const days = new Set(stats.days || []); let d = new Date();
+    if(!days.has(dayKey(d))) d.setDate(d.getDate() - 1);
+    let n = 0; while(days.has(dayKey(d))){ n++; d.setDate(d.getDate() - 1); }
+    return n;
+  }
+  function todayDone(){ return (stats.days || []).includes(dayKey()); }
+  function bestStreak(){
+    const nums = [...new Set(stats.days || [])].map(k => { const p = k.split('-'); return Date.UTC(+p[0], +p[1]-1, +p[2]) / 86400000; }).sort((a, b) => a - b);
+    let best = 0, cur = 0, prev = null;
+    nums.forEach(n => { cur = (prev !== null && n - prev === 1) ? cur + 1 : 1; if(cur > best) best = cur; prev = n; });
+    return best;
+  }
+  const TIERS = [ { n:1, name:'Api Kuning', c:'#F5B301' }, { n:7, name:'Api Oranye', c:'#F97316' }, { n:14, name:'Api Merah', c:'#EF4444' }, { n:30, name:'Api Ungu', c:'#8B5CF6' }, { n:50, name:'Api Ungu Menyala', c:'#D946EF' } ];
+  function tierOf(n){ let t = 0; TIERS.forEach((x, i) => { if(n >= x.n) t = i + 1; }); return t; }
+  const FLAME_SVG = size => '<svg class="fl" viewBox="0 0 24 24" width="' + size + '" height="' + size + '" aria-hidden="true"><path d="M12 2.5c.6 3.2 4.7 5.3 4.7 10a4.7 4.7 0 0 1-9.4 0c0-1.9.9-3.1 1.9-4 .1 1.4.8 2.3 1.6 2.6C10.3 7.6 10.7 5 12 2.5z" fill="currentColor"/></svg>';
+  function updateFlames(){
+    const n = streak(), tier = tierOf(n), cold = n > 0 && !todayDone();
+    $$('.flame').forEach(b => {
+      b.dataset.tier = String(tier); b.classList.toggle('cold', cold);
+      b.querySelector('.fn').textContent = String(n);
+      b.setAttribute('aria-label', 'Api streak, ' + n + ' hari. Buka detail.');
+    });
+  }
+
+  /* ---------- tampilan: situs atau ruang latihan ---------- */
+  const A = { screen:'setup', topic:'', group:'', spinning:false, run:0, phase:'idle', startAt:0, endAt:0, quota:0, used:0, timer:null, lastSec:-1, lastAction:0, wake:null, exitArmed:false, exitTimer:null, histFav:false };
+  let view = 'site';
+  function showView(v){
+    view = v;
+    $('#site').hidden = v !== 'site'; $('#app').hidden = v !== 'app';
+    window.scrollTo(0, 0);
+    try{
+      if(v === 'app' && location.hash !== '#latihan') location.hash = 'latihan';
+      if(v === 'site' && location.hash === '#latihan') location.hash = 'beranda';
+    }catch(e){}
+  }
+  window.addEventListener('hashchange', () => {
+    if(location.hash === '#latihan' && view !== 'app') openApp();
+    else if(location.hash !== '#latihan' && view === 'app') leaveApp();
+  });
+  function openApp(){ showView('app'); showScreen('setup'); }
+  function leaveApp(){ stopTicker(); A.phase = 'idle'; unlockWake(); A.run++; A.spinning = false; setBusy(false); showView('site'); updateHeroStats(); }
+  function go(id){
+    const t = document.getElementById(id); if(!t) return;
+    if(view !== 'site') leaveApp();
+    t.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block:'start' });
+  }
+  $$('[data-go]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); go(a.dataset.go); }));
+  $$('[data-act="play"]').forEach(b => b.addEventListener('click', () => { initAudio(); openApp(); }));
+  $$('[data-act="settings"]').forEach(b => b.addEventListener('click', openSettings));
+  $('#daily-go').addEventListener('click', () => { initAudio(); openApp(); if(DAILY){ resetReel(); spin(DAILY); } });
+  $('#app-home').onclick = () => { leaveApp(); };
+
+  const SCREENS = $$('[data-screen]');
+  function showScreen(name){
+    A.screen = name;
+    SCREENS.forEach(s => { s.hidden = s.dataset.screen !== name; });
+    const tabbed = ['setup','history','stats'].includes(name);
+    $('#tabs').classList.toggle('off', !tabbed);
+    $$('.tab').forEach(t => t.setAttribute('aria-selected', String(t.dataset.tab === name)));
+    if(name === 'history') renderHistory();
+    if(name === 'stats') renderStats();
+    if(document.activeElement && document.activeElement.blur) document.activeElement.blur();
+    window.scrollTo(0, 0);
+  }
+  $$('.tab').forEach(t => t.onclick = () => { if(!A.spinning) showScreen(t.dataset.tab); });
+
+  /* ---------- situs: pita topik, contoh undian, kartu ---------- */
+  const allTopics = GROUPS.flatMap(g => TOPICS[g]);
+  function buildTracks(){
+    [['#track1', 0], ['#track2', 1]].forEach(([id]) => {
+      const t = $(id); t.textContent = '';
+      const items = []; for(let i = 0; i < 16; i++) items.push(pick(allTopics));
+      items.concat(items).forEach(w => t.append(el('span', 'pill', w)));
+    });
+  }
+  function buildCards(){
+    const box = $('#gcards'); box.textContent = '';
+    SECTIONS.forEach(sec => {
+      const h = el('p', 'eyebrow gsec-head', sec.n); box.append(h);
+      const grid = el('div', 'gcards');
+      sec.g.forEach(g => {
+        const list = TOPICS[g], c = el('div', 'gcard');
+        const top = el('div', 'top');
+        top.append(el('span', 'ico', EMOJI[g] || ''), el('h4', '', g), el('span', 'cnt', String(list.length)));
+        const ul = el('ul');
+        [0, Math.floor(list.length/2), list.length-1].forEach(i => ul.append(el('li', '', list[i])));
+        c.append(top, ul); grid.append(c);
+      });
+      box.append(grid);
+    });
+  }
+  let heroTimer = null;
+  function startHero(){
+    const cur = $('#h-cur'), prev = $('#h-prev'), next = $('#h-next');
+    let i = 0, seq = []; for(let k = 0; k < 40; k++) seq.push(pick(GROUPS.map(g => pick(TOPICS[g]))));
+    function paint(){
+      const w = seq[i % seq.length];
+      prev.textContent = seq[(i + seq.length - 1) % seq.length]; next.textContent = seq[(i + 1) % seq.length];
+      cur.textContent = w; cur.className = 'rw cur';
+      if(!reduceMotion()){ void cur.offsetWidth; cur.classList.add('flip'); }
+      i++;
+    }
+    paint();
+    if(!reduceMotion()) heroTimer = setInterval(() => { if(view === 'site' && !document.hidden) paint(); }, 2200);
+  }
+  function updateHeroStats(){
+    updateFlames();
+  }
+
+  /* ---------- pengaturan: modal ---------- */
+  let lastFocus = null;
+  function openSettings(){
+    lastFocus = document.activeElement;
+    $('#modal').hidden = false; $('#reset-note').textContent = '';
+    syncSettings(); $('#m-close').focus();
+  }
+  function closeSettings(){ $('#modal').hidden = true; if(lastFocus && lastFocus.focus) try{ lastFocus.focus(); }catch(e){} }
+  $('#m-close').onclick = closeSettings;
+  $('#modal').addEventListener('click', e => { if(e.target === $('#modal')) closeSettings(); });
+  window.addEventListener('keydown', e => { if(e.key === 'Escape' && !$('#modal').hidden) closeSettings(); });
+
+  function buildSettings(){
+    const st = $('#styles'); st.textContent = '';
+    Object.keys(STYLES).forEach(name => {
+      const row = el('div', 'stylerow');
+      const b = el('button', 'opt', name); b.type = 'button'; b.dataset.style = name;
+      b.onclick = () => { cfg.style = name; persistCfg(); syncSettings(); };
+      const t = el('button', 'opt play'); t.type = 'button'; t.title = 'Coba gaya ' + name; t.setAttribute('aria-label', 'Coba gaya ' + name);
+      t.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>';
+      t.onclick = () => { initAudio(); const s = STYLES[name]; s.click(); setTimeout(() => s.tick(3), 250); setTimeout(() => s.tick(5), 380); setTimeout(() => s.land(), 560); };
+      row.append(b, t); st.append(row);
+    });
+    const th = $('#themes'); th.textContent = '';
+    THEMES.forEach(([k, n]) => { const b = el('button', 'opt', n); b.type = 'button'; b.dataset.theme = k; b.onclick = () => { cfg.theme = k; persistCfg(); applyMode(); syncSettings(); }; th.append(b); });
+    const sw = $('#swatches'); sw.textContent = '';
+    Object.keys(ACCENTS).forEach(k => { const b = el('button', 'sw'); b.type = 'button'; b.dataset.acc = k; b.setAttribute('aria-label', ACCENTS[k].n); b.title = ACCENTS[k].n; b.onclick = () => { cfg.accent = k; persistCfg(); applyAccent(); syncSettings(); }; sw.append(b); });
+  }
+  function syncSettings(){
+    $('#set-vol').value = cfg.volume; $('#vol-val').textContent = cfg.volume;
+    $('#set-warn').checked = !!cfg.warn;
+    $$('#styles .opt[data-style]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.style === cfg.style)));
+    $$('#themes .opt').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.theme === cfg.theme)));
+    $$('.sw').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.acc === cfg.accent)));
+    applyAccent();
+  }
+  $('#set-vol').addEventListener('input', e => { cfg.volume = Number(e.target.value); $('#vol-val').textContent = cfg.volume; persistCfg(); });
+  $('#set-warn').addEventListener('change', e => { cfg.warn = e.target.checked; persistCfg(); });
+  let resetArmed = false;
+  $('#reset-data').onclick = () => {
+    const note = $('#reset-note');
+    if(!resetArmed){ resetArmed = true; note.textContent = 'Tekan sekali lagi untuk menghapus riwayat, catatan, statistik, dan daftar topik yang sudah keluar.'; setTimeout(() => { resetArmed = false; }, 4000); return; }
+    resetArmed = false;
+    stats = cleanStats({}); hist = []; favs = new Set(); notes = {};
+    ['mt-stats','mt-history','mt-fav','mt-notes','mt-used'].forEach(k => { try{ localStorage.removeItem(k); }catch(e){} });
+    note.textContent = 'Data sudah dihapus.'; updateHeroStats();
+  };
+
+  /* ---------- ruang latihan: pengaturan sesi ---------- */
+  function buildChips(){
+    const box = $('#chips'); box.textContent = '';
+    DURS.forEach(m => {
+      const b = el('button', 'chip'); b.type = 'button'; b.id = 'chip-' + m; b.setAttribute('aria-pressed', String(m === pref.dur));
+      b.innerHTML = m + '<small>menit</small>'; b.disabled = A.spinning;
+      b.onclick = () => { pref.dur = m; persistPref(); buildChips(); };
+      box.append(b);
+    });
+    const pb = $('#preps'); pb.textContent = '';
+    PREPS.forEach(m => {
+      const b = el('button', 'chip'); b.type = 'button'; b.id = 'prep-' + m; b.setAttribute('aria-pressed', String(m === pref.prep));
+      b.innerHTML = (m === 0 ? '-' : m) + '<small>' + (m === 0 ? 'tanpa' : 'menit') + '</small>'; b.disabled = A.spinning;
+      b.setAttribute('aria-label', m === 0 ? 'Tanpa waktu belajar' : m + ' menit waktu belajar');
+      b.onclick = () => { pref.prep = m; persistPref(); buildChips(); };
+      pb.append(b);
+    });
+  }
+  let gid = 0;
+  function buildGroups(){
+    const box = $('#groups'); box.textContent = ''; gid = 0;
+    SECTIONS.forEach(sec => {
+      const wrap = el('div', 'gsec');
+      const head = el('div', 'row spread gshead');
+      head.append(el('p', 'eyebrow', sec.n));
+      const act = el('div', 'row'); act.style.gap = '0';
+      const b1 = el('button', 'btn btn-quiet', 'Semua'); b1.type = 'button'; b1.disabled = A.spinning;
+      b1.onclick = () => { sec.g.forEach(g => sel.add(g)); persistPref(); buildGroups(); updatePool(); };
+      const b2 = el('button', 'btn btn-quiet', 'Kosong'); b2.type = 'button'; b2.disabled = A.spinning;
+      b2.onclick = () => { sec.g.forEach(g => sel.delete(g)); persistPref(); buildGroups(); updatePool(); };
+      act.append(b1, b2); head.append(act);
+      const grid = el('div', 'groups');
+      sec.g.forEach(g => {
+        const l = el('label', 'tg');
+        const inp = document.createElement('input'); inp.type = 'checkbox'; inp.id = 'grp-' + (gid++);
+        inp.checked = sel.has(g); inp.disabled = A.spinning;
+        inp.onchange = () => { if(inp.checked) sel.add(g); else sel.delete(g); persistPref(); updatePool(); };
+        const s = el('span', 'tgbox'); s.append(el('b', '', em(g) + g), el('small', '', String(TOPICS[g].length)));
+        l.append(inp, s); grid.append(l);
+      });
+      wrap.append(head, grid); box.append(wrap);
+    });
+  }
+  function poolCount(){ let n = 0; sel.forEach(g => { n += TOPICS[g].length; }); return n; }
+  function updatePool(){
+    $('#pool-info').textContent = sel.size ? sel.size + ' dari ' + GROUPS.length + ' jenis dipilih, ' + poolCount() + ' topik' : 'Pilih minimal satu jenis topik.';
+    $('#btn-spin').disabled = A.spinning || sel.size === 0;
+  }
+  function setBusy(b){
+    A.spinning = b; buildChips(); buildGroups(); updatePool();
+    $('#sel-all').disabled = b; $('#sel-none').disabled = b; $('#btn-talk').disabled = b;
+  }
+  $('#sel-all').onclick = () => { GROUPS.forEach(g => sel.add(g)); persistPref(); buildGroups(); updatePool(); };
+  $('#sel-none').onclick = () => { sel.clear(); persistPref(); buildGroups(); updatePool(); };
+
+  /* ---------- catatan ---------- */
+  function bindNotes(area){
+    let t = null;
+    area.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => { noteSet(A.topic, area.value.trim()); syncNotes(area); }, 350); });
+    area.addEventListener('blur', () => { clearTimeout(t); noteSet(A.topic, area.value.trim()); });
+  }
+  function syncNotes(src){ [$('#notes-setup'), $('#notes-session')].forEach(a => { if(a !== src) a.value = noteGet(A.topic); }); }
+  bindNotes($('#notes-setup')); bindNotes($('#notes-session'));
+
+  /* ---------- undian ---------- */
+  function pickTopic(){
+    const used = new Set(load('mt-used', []));
+    let pool = [];
+    sel.forEach(g => TOPICS[g].forEach(t => { if(!used.has(t)) pool.push({ t:t, g:g }); }));
+    let reset = false;
+    if(!pool.length){ sel.forEach(g => TOPICS[g].forEach(t => { used.delete(t); pool.push({ t:t, g:g }); })); reset = true; }
+    const f = pick(pool); used.add(f.t); save('mt-used', [...used]);
+    return { f:f, reset:reset };
+  }
+  function showRows(prev, cur, next, flip){
+    $('#rw-prev').textContent = prev || ''; $('#rw-next').textContent = next || '';
+    const c = $('#rw-cur'); c.textContent = cur; c.className = 'rw cur';
+    if(flip){ void c.offsetWidth; c.classList.add('flip'); }
+  }
+  function confetti(host){
+    if(reduceMotion() || !host.animate) return;
+    const A2 = ACCENTS[cfg.accent] || ACCENTS.merah, cols = [A2.d[0], '#FFFFFF', '#FFD166', A2.l[0]];
+    for(let i = 0; i < 28; i++){
+      const p = el('i', 'cf'); p.style.left = (36 + Math.random()*28) + '%'; p.style.top = '46%'; p.style.background = pick(cols); host.append(p);
+      const dx = (Math.random() - .5) * 300, dy = -(70 + Math.random()*150);
+      const a = p.animate([
+        { transform:'translate(0,0) rotate(0deg)', opacity:1 },
+        { transform:'translate(' + dx + 'px,' + dy + 'px) rotate(' + (Math.random()*540) + 'deg)', opacity:1, offset:.55 },
+        { transform:'translate(' + (dx*1.2) + 'px,' + (dy + 230) + 'px) rotate(720deg)', opacity:0 }
+      ], { duration: 1100 + Math.random()*500, easing:'cubic-bezier(.2,.7,.4,1)' });
+      a.onfinish = () => p.remove();
+    }
+  }
+  function land(t, g, announce){
+    A.topic = t; A.group = g;
+    showRows('', t, '', false);
+    $('#rw-cur').classList.add('land');
+    $('#reel-label').textContent = 'Topikmu / ' + em(g) + g;
+    $('#reel-sr').textContent = 'Topik: ' + t + ', jenis ' + g;
+    $('#btn-spin').textContent = 'Putar Ulang';
+    $('#btn-talk').hidden = false;
+    $('#notes-setup-wrap').hidden = false; $('#notes-setup').value = noteGet(t); syncNotes($('#notes-setup'));
+    if(announce){ sfx.land(); confetti($('#reel')); }
+  }
+  function resetReel(){
+    A.topic = ''; A.group = '';
+    showRows('', '?', '', false);
+    $('#reel-label').textContent = 'Tekan putar'; $('#reel-sr').textContent = '';
+    $('#btn-spin').textContent = 'Putar'; $('#btn-talk').hidden = true; $('#notes-setup-wrap').hidden = true; $('#spin-note').textContent = '';
+  }
+  async function spin(forced){
+    if(A.spinning || (!forced && !sel.size)) return;
+    initAudio();
+    const run = ++A.run;
+    setBusy(true);
+    $('#btn-talk').hidden = true; $('#spin-note').textContent = ''; $('#notes-setup-wrap').hidden = true;
+    $('#reel-label').textContent = 'Memutar...';
+    const rect = $('#reel').getBoundingClientRect();
+    if(rect.top < 0 || rect.bottom > window.innerHeight) $('#reel').scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block:'center' });
+    let r;
+    if(forced){ const u = new Set(load('mt-used', [])); u.add(forced.t); save('mt-used', [...u]); r = { f:forced, reset:false }; } else r = pickTopic();
+    const f = r.f;
+    const all = []; (sel.size ? [...sel] : GROUPS).forEach(g => TOPICS[g].forEach(t => all.push(t)));
+    const N = 24, seq = [];
+    for(let i = 0; i < N; i++){
+      let w = pick(all), guard = 0;
+      while(all.length > 1 && (w === seq[seq.length-1] || w === f.t) && guard++ < 20) w = pick(all);
+      seq.push(w);
+    }
+    seq.push(f.t);
+    if(reduceMotion()) await sleep(400);
+    else {
+      for(let i = 0; i <= N; i++){
+        if(run !== A.run) return;
+        showRows(seq[i-1], seq[i], seq[i+1] || pick(all), true);
+        if(i < 16) sfx.tick(i); else sfx.tickSlow(i);
+        await sleep(55 * Math.pow(1.065, i));
+      }
+    }
+    if(run !== A.run) return;
+    land(f.t, f.g, true);
+    if(r.reset) $('#spin-note').textContent = 'Semua topik di jenis yang dipilih sudah keluar. Daftar dimulai lagi dari awal.';
+    setBusy(false);
+  }
+  $('#btn-spin').onclick = () => spin();
+  $('#btn-talk').onclick = () => { if(A.topic && !A.spinning) startSession(); };
+
+  /* ---------- sesi ---------- */
+  async function lockWake(){ try{ if(navigator.wakeLock) A.wake = await navigator.wakeLock.request('screen'); }catch(e){} }
+  function unlockWake(){ try{ if(A.wake){ A.wake.release(); A.wake = null; } }catch(e){} }
+  function stopTicker(){ if(A.timer){ clearInterval(A.timer); A.timer = null; } }
+  function setTimerView(secs, total, warnable){
+    const warn = warnable && secs <= 10;
+    $('#timer').textContent = fmt(secs);
+    $('#timer').classList.toggle('warn', warn); $('#bar').classList.toggle('warn', warn);
+    $('#bar-fill').style.width = total ? Math.min(100, ((total - secs) / total) * 100) + '%' : '0%';
+  }
+  function startSession(){
+    A.quota = pref.dur * 60; A.used = 0;
+    $('#s-topic').textContent = A.topic; $('#s-group').textContent = 'Topik / ' + em(A.group) + A.group;
+    $('#notes-session').value = noteGet(A.topic);
+    showScreen('session'); lockWake();
+    if(pref.prep > 0) beginPrep(); else beginCountdown();
+  }
+  function beginPrep(){
+    stopTicker(); A.phase = 'prep'; A.lastSec = -1;
+    const total = pref.prep * 60;
+    $('#phase-name').textContent = 'Waktu Belajar';
+    $('#phase-hint').textContent = 'Cari bahan, catat poin penting, lalu tekan Selesai Belajar kalau kamu sudah siap.';
+    $('#btn-done').textContent = 'Selesai Belajar';
+    A.endAt = Date.now() + total * 1000;
+    setTimerView(total, total, false);
+    A.timer = setInterval(() => {
+      const left = A.endAt - Date.now();
+      if(left <= 0){ sfx.end(); beginCountdown(); return; }
+      const s = Math.ceil(left / 1000); setTimerView(s, total, false);
+      if(s !== A.lastSec){ A.lastSec = s; if(cfg.warn && (s === 60 || s === 30) && total > s) sfx.warn(); else if(s <= 3) sfx.count(); }
+    }, 100);
+  }
+  function beginCountdown(){
+    stopTicker(); A.phase = 'transition'; A.lastSec = -1;
+    $('#phase-name').textContent = 'Bersiap';
+    $('#phase-hint').textContent = 'Buka dengan satu kalimat yang menarik, jelaskan isinya, lalu tutup dengan satu kalimat kesimpulan.';
+    $('#btn-done').textContent = 'Mulai Sekarang';
+    $('#timer').textContent = '3'; $('#timer').classList.remove('warn'); $('#bar').classList.remove('warn'); $('#bar-fill').style.width = '0%';
+    A.endAt = Date.now() + 3000;
+    A.timer = setInterval(() => {
+      const left = A.endAt - Date.now();
+      if(left <= 0){ beginRun(); return; }
+      const s = Math.ceil(left / 1000); $('#timer').textContent = String(s);
+      if(s !== A.lastSec){ A.lastSec = s; sfx.count(); }
+    }, 100);
+  }
+  function beginRun(){
+    stopTicker(); A.phase = 'run'; A.lastSec = -1;
+    $('#phase-name').textContent = 'Bicara'; $('#btn-done').textContent = 'Selesai';
+    A.startAt = Date.now(); A.endAt = A.startAt + A.quota * 1000;
+    sfx.start(); setTimerView(A.quota, A.quota, true);
+    A.timer = setInterval(() => {
+      const left = A.endAt - Date.now();
+      if(left <= 0){ finishRun(false); return; }
+      const s = Math.ceil(left / 1000); setTimerView(s, A.quota, true);
+      if(s !== A.lastSec){
+        A.lastSec = s;
+        if(s === 10) sfx.warn();
+        else if(cfg.warn && (s === 60 || s === 30) && A.quota > s) sfx.warn();
+        else if(s <= 5) sfx.count();
+      }
+    }, 100);
+  }
+  function finishRun(manual){
+    if(A.phase !== 'run') return;
+    stopTicker();
+    A.used = manual ? Math.min(A.quota, (Date.now() - A.startAt) / 1000) : A.quota;
+    A.phase = 'idle'; sfx.end(); unlockWake();
+    record(); showDone();
+  }
+  function record(){
+    const today = dayKey();
+    stats.sessions++; stats.seconds += Math.round(A.used);
+    if(!stats.days.includes(today)) stats.days.push(today);
+    stats.days = stats.days.slice(-1500);
+    stats.byGroup[A.group] = (stats.byGroup[A.group] || 0) + 1;
+    stats.daily[today] = (stats.daily[today] || 0) + Math.round(A.used);
+    const dk = Object.keys(stats.daily).sort(); while(dk.length > 120) delete stats.daily[dk.shift()];
+    save('mt-stats', stats); askPersist(); updateFlames();
+    hist.unshift({ t:A.topic, g:A.group, u:Math.round(A.used), q:A.quota, d:Date.now() });
+    hist = hist.slice(0, 200); save('mt-history', hist);
+  }
+  function primary(){
+    const now = Date.now();
+    if(now - A.lastAction < 350) return;
+    A.lastAction = now;
+    if(A.phase === 'prep') beginCountdown();
+    else if(A.phase === 'transition') beginRun();
+    else if(A.phase === 'run') finishRun(true);
+  }
+  $('#btn-done').onclick = primary;
+  const typing = t => t && (t.tagName === 'TEXTAREA' || t.tagName === 'INPUT');
+  window.addEventListener('keydown', e => {
+    if(e.code !== 'Space' || view !== 'app' || A.screen !== 'session' || typing(e.target) || !$('#modal').hidden) return;
+    e.preventDefault(); if(!e.repeat) primary();
+  });
+  window.addEventListener('keyup', e => { if(e.code === 'Space' && view === 'app' && A.screen === 'session' && !typing(e.target)) e.preventDefault(); });
+  $('#btn-exit').onclick = () => {
+    const b = $('#btn-exit');
+    if(!A.exitArmed){
+      A.exitArmed = true; b.textContent = 'Yakin keluar?';
+      A.exitTimer = setTimeout(() => { A.exitArmed = false; b.textContent = 'Keluar'; }, 3000);
+      return;
+    }
+    clearTimeout(A.exitTimer); A.exitArmed = false; b.textContent = 'Keluar';
+    stopTicker(); A.phase = 'idle'; unlockWake(); showScreen('setup');
+  };
+
+  /* ---------- selesai ---------- */
+  function showDone(){
+    $('#d-topic').textContent = A.topic; $('#d-group').textContent = 'Selesai / ' + em(A.group) + A.group;
+    $('#d-used').textContent = fmt(A.used); $('#d-quota').textContent = fmt(A.quota); $('#d-streak').textContent = streak() + ' Hari';
+    const ratio = A.used / A.quota;
+    $('#d-msg').textContent = ratio >= .98 ? 'Kamu memakai seluruh waktu.'
+      : ratio >= .75 ? 'Kamu berhenti sedikit sebelum waktu habis.'
+      : 'Kamu berhenti jauh sebelum waktu habis. Coba durasi yang lebih pendek atau gali topik lebih dalam.';
+    const f = $('#d-fav'); f.setAttribute('aria-pressed', String(favs.has(A.topic))); f.textContent = favs.has(A.topic) ? 'Hapus dari Favorit' : 'Tandai Favorit';
+    showScreen('done');
+  }
+  $('#d-fav').onclick = () => { toggleFav(A.topic); const f = $('#d-fav'); f.setAttribute('aria-pressed', String(favs.has(A.topic))); f.textContent = favs.has(A.topic) ? 'Hapus dari Favorit' : 'Tandai Favorit'; };
+  $('#btn-again').onclick = () => { resetReel(); showScreen('setup'); };
+  $('#d-hist').onclick = () => showScreen('history');
+  function toggleFav(t){ if(favs.has(t)) favs.delete(t); else favs.add(t); save('mt-fav', [...favs]); }
+
+  /* ---------- riwayat dan statistik ---------- */
+  function ago(ts){
+    const m = Math.round((Date.now() - ts) / 60000);
+    if(m < 1) return 'baru saja'; if(m < 60) return m + ' mnt lalu';
+    const h = Math.round(m / 60); if(h < 24) return h + ' jam lalu';
+    const d = Math.round(h / 24); return d + ' hari lalu';
+  }
+  function renderHistory(){
+    $('#hf-all').setAttribute('aria-pressed', String(!A.histFav)); $('#hf-fav').setAttribute('aria-pressed', String(A.histFav));
+    const box = $('#hlist'); box.textContent = '';
+    const rows = hist.filter(h => !A.histFav || favs.has(h.t));
+    if(!rows.length){
+      const e = el('div', 'empty');
+      e.append(el('p', '', A.histFav ? 'Belum ada favorit. Tandai topik dengan bintang dari riwayat atau layar selesai.' : 'Belum ada sesi. Putar topik pertamamu dan selesaikan satu sesi.'));
+      const b = el('button', 'btn btn-primary', 'Mulai Latihan'); b.type = 'button'; b.onclick = () => showScreen('setup'); e.append(b); box.append(e); return;
+    }
+    rows.forEach(h => {
+      const it = el('div', 'item');
+      const star = el('button', 'star', '★'); star.type = 'button'; star.setAttribute('aria-label', 'Favorit: ' + h.t); star.setAttribute('aria-pressed', String(favs.has(h.t)));
+      star.onclick = () => { toggleFav(h.t); renderHistory(); };
+      const tt = el('div', 'tt'); tt.append(el('b', '', h.t), el('span', '', em(h.g) + h.g + ', ' + fmt(h.u) + ' dari ' + fmt(h.q) + ', ' + ago(h.d)));
+      const b = el('button', 'btn btn-sm hbtn', 'Latih Lagi'); b.type = 'button';
+      b.onclick = () => { showScreen('setup'); resetReel(); land(h.t, h.g, false); };
+      it.append(star, tt, b); box.append(it);
+    });
+  }
+  $('#hf-all').onclick = () => { A.histFav = false; renderHistory(); };
+  $('#hf-fav').onclick = () => { A.histFav = true; renderHistory(); };
+  function renderStats(){
+    const f = $('#sfacts'); f.textContent = '';
+    const mins = Math.round(stats.seconds / 60), avg = stats.sessions ? fmt(stats.seconds / stats.sessions) : '0:00';
+    [['Sesi', String(stats.sessions)], ['Menit Bicara', String(mins)], ['Streak', streak() + ' Hari'], ['Rata-rata', avg]].forEach(([k, v]) => {
+      const c = el('div', 'fact'); c.append(el('span', 'eyebrow', k), el('span', 'v', v)); f.append(c);
+    });
+    const bars = $('#sbars'); bars.textContent = '';
+    const rows = Object.entries(stats.byGroup).sort((a, b) => b[1] - a[1]).slice(0, 8);
+    if(!rows.length){ bars.append(el('p', 'muted', 'Selesaikan satu sesi untuk melihat grafik.')); return; }
+    const max = rows[0][1];
+    rows.forEach(([g, n]) => {
+      const r = el('div', 'barrow'); r.append(el('span', '', em(g) + g));
+      const b = el('div', 'bar2'); const i = document.createElement('i'); i.style.width = Math.max(4, Math.round(n / max * 100)) + '%'; b.append(i);
+      r.append(b, el('span', 'n', String(n))); bars.append(r);
+    });
+  }
+
+  /* ---------- menu api streak ---------- */
+  function openStreak(){
+    lastFocus = document.activeElement;
+    const n = streak(), tier = tierOf(n), done = todayDone(), body = $('#sbody'); body.textContent = '';
+    const col = tier ? TIERS[tier-1].c : 'var(--muted)';
+    const top = el('div', 'sflame'); top.innerHTML = FLAME_SVG(72);
+    const fl = top.firstChild; fl.style.color = col; if(tier === 5) fl.classList.add('glow'); if(n > 0 && !done) fl.style.opacity = '.6';
+    top.append(el('div', 'sbig', n + ' Hari'), el('div', 'muted', tier ? TIERS[tier-1].name : 'Belum Menyala'));
+    body.append(top);
+    body.append(el('p', '', done ? 'Hari ini sudah latihan. Apimu menyala, sampai jumpa besok.' : n > 0 ? 'Latihan hari ini supaya apimu tidak padam.' : 'Belum ada api. Selesaikan satu sesi untuk menyalakannya.'));
+    const next = TIERS.find(x => x.n > n);
+    const pw = el('div', 'block');
+    if(next){
+      const prev = tier ? TIERS[tier-1].n : 0, pct = Math.max(4, Math.round((n - prev) / (next.n - prev) * 100));
+      const bar = el('div', 'sbar'), fill = document.createElement('i'); fill.style.width = pct + '%'; fill.style.background = next.c; bar.append(fill);
+      pw.append(bar, el('p', 'small muted', 'Tinggal ' + (next.n - n) + ' Hari lagi menuju ' + next.name + '.'));
+    } else pw.append(el('p', 'small muted', 'Api tertinggi sudah menyala. Pertahankan!'));
+    body.append(pw);
+    const wk = el('div', 'week'), names = ['Min','Sen','Sel','Rab','Kam','Jum','Sab'], days = new Set(stats.days);
+    let weekSec = 0;
+    for(let i = 6; i >= 0; i--){
+      const d = new Date(); d.setDate(d.getDate() - i); const k = dayKey(d), on = days.has(k);
+      weekSec += stats.daily[k] || 0;
+      const c = el('div'); c.append(el('div', '', names[d.getDay()]));
+      const dot = el('div', 'dotd' + (on ? ' on' : '') + (i === 0 ? ' today' : ''), on ? '\u2713' : '');
+      if(on) dot.style.background = col === 'var(--muted)' ? 'var(--accent)' : col;
+      c.append(dot); wk.append(c);
+    }
+    body.append(wk);
+    const lad = el('div', 'ladder');
+    TIERS.forEach(x => { const c = el('div'); c.innerHTML = FLAME_SVG(22); c.firstChild.style.color = n >= x.n ? x.c : 'var(--line)'; c.append(el('span', '', x.n + ' Hari')); lad.append(c); });
+    body.append(lad);
+    let fav = '-', fm = 0; Object.keys(stats.byGroup).forEach(g => { if(stats.byGroup[g] > fm){ fm = stats.byGroup[g]; fav = g; } });
+    const facts = el('div', 'facts');
+    [['Streak Terbaik', Math.max(bestStreak(), n) + ' Hari'], ['Menit Minggu Ini', String(Math.round(weekSec / 60))], ['Total Sesi', String(stats.sessions)], ['Hari Latihan', String(stats.days.length)], ['Jenis Favorit', fav === '-' ? '-' : em(fav) + fav]].forEach(([k, v]) => {
+      const f = el('div', 'fact'); f.append(el('span', 'eyebrow', k), el('span', 'v', v)); facts.append(f);
+    });
+    body.append(facts);
+    const go = el('button', 'btn btn-primary', view === 'site' ? 'Mulai Latihan' : 'Tutup'); go.type = 'button';
+    go.onclick = () => { closeStreak(); if(view === 'site') openApp(); };
+    body.append(go);
+    $('#smodal').hidden = false; $('#sm-close').focus();
+  }
+  function closeStreak(){ $('#smodal').hidden = true; if(lastFocus && lastFocus.focus) try{ lastFocus.focus(); }catch(e){} }
+  $$('[data-act="streak"]').forEach(b => b.addEventListener('click', openStreak));
+  $('#sm-close').onclick = closeStreak;
+  $('#smodal').addEventListener('click', e => { if(e.target === $('#smodal')) closeStreak(); });
+  window.addEventListener('keydown', e => { if(e.key === 'Escape' && !$('#smodal').hidden) closeStreak(); });
+
+  /* ---------- cadangan dan pemulihan ---------- */
+  function exportCode(){
+    const data = { v:2, stats:stats, hist:hist, favs:[...favs], notes:notes, used:load('mt-used', []), pref:{ dur:pref.dur, prep:pref.prep, groups:[...sel] }, cfg:cfg };
+    return 'MT2.' + btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+  }
+  function importCode(code){
+    code = String(code || '').trim();
+    if(code.indexOf('MT2.') !== 0) throw new Error('format');
+    const data = JSON.parse(decodeURIComponent(escape(atob(code.slice(4)))));
+    if(!data || typeof data !== 'object' || !data.stats) throw new Error('isi');
+    stats = cleanStats(data.stats); hist = cleanHist(data.hist);
+    favs = new Set((Array.isArray(data.favs) ? data.favs : []).filter(x => typeof x === 'string')); notes = cleanNotes(data.notes);
+    const used = (Array.isArray(data.used) ? data.used : []).filter(x => typeof x === 'string');
+    if(data.pref && typeof data.pref === 'object'){
+      if(DURS.includes(data.pref.dur)) pref.dur = data.pref.dur;
+      if(PREPS.includes(data.pref.prep)) pref.prep = data.pref.prep;
+      if(Array.isArray(data.pref.groups)){ sel.clear(); data.pref.groups.forEach(g => { if(TOPICS[g]) sel.add(g); }); if(!sel.size) GROUPS.forEach(g => sel.add(g)); }
+    }
+    if(data.cfg && typeof data.cfg === 'object'){
+      const c = data.cfg;
+      if(typeof c.volume === 'number') cfg.volume = Math.max(0, Math.min(100, c.volume));
+      if(STYLES[c.style]) cfg.style = c.style;
+      if(THEMES.some(x => x[0] === c.theme)) cfg.theme = c.theme;
+      if(ACCENTS[c.accent]) cfg.accent = c.accent;
+      if(typeof c.warn === 'boolean') cfg.warn = c.warn;
+    }
+    save('mt-stats', stats); save('mt-history', hist); save('mt-fav', [...favs]); save('mt-notes', notes); save('mt-used', used); persistPref(); persistCfg();
+    applyMode(); syncSettings(); buildChips(); buildGroups(); updatePool(); updateFlames();
+  }
+  let restoreArmed = false;
+  $('#backup-make').onclick = () => {
+    const box = $('#backup-box'), note = $('#backup-note'); box.value = exportCode(); box.focus(); box.select();
+    let p = null; try{ p = navigator.clipboard && navigator.clipboard.writeText(box.value); }catch(e){}
+    if(p && p.then) p.then(() => { note.textContent = 'Kode disalin. Simpan di tempat yang aman.'; }, () => { note.textContent = 'Kode sudah dipilih. Salin manual lalu simpan di tempat yang aman.'; });
+    else note.textContent = 'Kode sudah dipilih. Salin manual lalu simpan di tempat yang aman.';
+  };
+  $('#backup-restore').onclick = () => {
+    const note = $('#backup-note'), code = $('#backup-box').value.trim();
+    if(!code){ note.textContent = 'Tempel kode cadangan dulu di kotak di atas.'; return; }
+    if(!restoreArmed){ restoreArmed = true; note.textContent = 'Tekan Pulihkan dari Kode sekali lagi. Data di browser ini akan diganti.'; setTimeout(() => { restoreArmed = false; }, 5000); return; }
+    restoreArmed = false;
+    try{ importCode(code); note.textContent = 'Data berhasil dipulihkan.'; }
+    catch(e){ note.textContent = 'Kode tidak valid. Pastikan kode disalin lengkap.'; }
+  };
+
+  /* ---------- mulai ---------- */
+  buildSettings(); applyMode(); syncSettings();
+  let DAILY = null;
+  function buildDaily(){
+    try{
+      const d = new Date(); let h = d.getFullYear() * 372 + d.getMonth() * 31 + d.getDate();
+      h = (h * 2654435761) % 4294967296;
+      const w = allTopics[h % allTopics.length];
+      const g = GROUPS.find(x => TOPICS[x].includes(w)) || '';
+      DAILY = { t:w, g:g }; $('#daily-topic').textContent = w; $('#daily-group').textContent = g;
+    }catch(e){}
+  }
+  buildTracks(); buildCards(); buildDaily(); startHero(); updateFlames();
+  buildChips(); buildGroups(); updatePool(); resetReel();
+  if(location.hash === '#latihan') openApp(); else showView('site');
+})();
+</script>
+
+</body></html>
