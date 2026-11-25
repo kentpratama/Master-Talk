@@ -2,8 +2,7 @@
 
 Master Talk adalah tempat latihan public speaking yang simpel. Terdapat ribuan topik yang bisa anda temui, pelajari materinya, lalu jelaskan materinya dengan durasi yang ditentukan. Di sini kamu bisa mendapat judul topik dengan katerogi yang bisa anda tentukan, lalu anda dapat menentukan timer untuk menentukan waktu anda belajar dari materi yand anda dapat, setelah itu anda bisa tampil depan layar untuk mempresentasikan hasil materi kamu.
 
-**Coba Langsung:** https://kentpratama.github.io/
-
+**Coba Langsung:** https://kentpratama.github.io/Master-Talk/
 ## Panduan Untuk Menggunakan Master Talk
 
 1. **Dapatkan Topik.** Pilih jenis topik yang kamu suka, lalu tekan dapatkan topiknya.
