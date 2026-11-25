@@ -1,31 +1,31 @@
 # Master Talk
 
-Master Talk adalah tempat latihan public speaking. Kamu mendapat satu topik acak, mempelajarinya sendiri, lalu menjelaskannya dengan lantang sampai waktu habis.
+Master Talk adalah tempat latihan public speaking yang simpel. Kamu dikasih satu topik acak, pelajari sendiri, lalu jelaskan keras-keras sampai timer habis.
 
-Tidak ada AI, tidak ada materi yang disediakan, tidak ada kuis, dan tidak ada rekaman suara. Kamu hanya diberi judul topik. Mencari bahan dan menyusun penjelasan adalah bagian dari latihannya.
+Di sini kamu cuma dapat judul topik. Nggak ada materi siap pakai, nggak ada kuis, dan nggak ada rekaman suara. Cari bahan dan susun penjelasan sendiri, karena di situlah latihannya.
 
 **Coba langsung:** https://kentpratama.github.io/
 
 ## Cara main
 
 1. **Dapatkan topik.** Pilih jenis topik yang kamu suka, lalu tekan Putar.
-2. **Pelajari materinya.** Pakai waktu belajar (5, 10, atau 15 menit, atau lewati) untuk mencari bahan dan mencatat poin penting.
-3. **Jelaskan dan kuasai.** Pilih durasi 2 sampai 10 menit, lalu jelaskan topiknya sampai timer habis. Spasi atau tombol Selesai mengakhiri sesi lebih awal.
+2. **Pelajari materinya.** Pakai waktu belajar 5, 10, atau 15 menit (boleh dilewati) buat cari bahan dan catat poin penting.
+3. **Jelaskan.** Pilih durasi 2 sampai 10 menit, lalu bicara sampai timer habis. Mau selesai lebih awal? Tekan Spasi atau tombol Selesai.
 
-## Fitur
+## Isi aplikasi
 
 - Lebih dari 1.800 topik di 10 jenis: Sejarah, Tokoh, Biologi, Astronomi, Geografi, Sains, Teknologi, Misteri, Fakta Dunia, dan Ekonomi.
-- Topik yang sudah keluar tidak diulang sampai semua topik di jenis pilihanmu kebagian.
-- Topik Hari Ini yang berganti setiap hari.
+- Topik yang sudah keluar nggak diulang sampai semua topik di jenis pilihanmu kebagian.
+- Topik Hari Ini yang berganti tiap hari.
 - Catatan per topik, riwayat, favorit, dan statistik.
-- Api streak harian dengan warna yang naik di hari ke-7, 14, 30, dan 50.
-- Empat gaya suara, mode terang, gelap, atau otomatis, dan enam warna tema.
+- Api streak harian. Warnanya berubah di hari ke-7, 14, 30, dan 50.
+- Empat gaya suara, mode terang atau gelap, dan enam warna tema.
 - Kode cadangan untuk menyimpan dan memulihkan data.
-- Tanpa akun dan tanpa mikrofon. Semua data tersimpan di browser.
+- Tanpa akun dan tanpa mikrofon. Semua data tersimpan di browser kamu.
 
-## Teknologi
+## Dibuat dengan
 
-Satu file `index.html` berisi HTML, CSS, dan JavaScript tanpa framework dan tanpa build step. Font dimuat dari Google Fonts. Data tersimpan di `localStorage`.
+Satu file `index.html` berisi HTML, CSS, dan JavaScript biasa, tanpa framework dan tanpa proses build. Font dari Google Fonts, data disimpan di `localStorage`.
 
 ## Pembuat
 
