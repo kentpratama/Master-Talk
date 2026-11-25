@@ -13,4 +13,4 @@ Master Talk adalah tempat latihan public speaking yang simpel. Terdapat ribuan t
 
 Dibuat oleh Christopher Kent Pratama.
 
-**LinkedIn:** https://www.linkedin.com/in/christopher-kent-pratama-3bab09451
+**LinkedIn:** https://www.linkedin.com/in/christopher-kent-pratama
